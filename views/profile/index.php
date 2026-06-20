@@ -1,77 +1,203 @@
 <?php require_once '../views/templates/header.php'; ?>
 <?php require_once '../views/templates/navbar.php'; ?>
 
-<div class="container mt-5 pt-4 mb-5" style="max-width:800px;">
-    <h2 class="fw-bold mb-1">Edit Profil</h2>
-    <p class="text-muted small mb-4">Perbarui informasi akun dan alamat pengiriman Anda</p>
-
-    <?php Helper::flash(); ?>
-
-    <!-- Tabs -->
-    <ul class="nav nav-tabs mb-4" id="profileTabs">
-        <li class="nav-item">
-            <a class="nav-link active fw-semibold" data-bs-toggle="tab" href="#tab-profile" style="color:#E4947D;">Data Diri</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link fw-semibold" data-bs-toggle="tab" href="#tab-password" style="color:#666;">Ubah Password</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <!-- Profile Tab -->
-        <div class="tab-pane fade show active" id="tab-profile">
-            <div class="card border-0 shadow-sm p-4" style="background:#FAF3D6; border-radius:12px;">
-                <form action="<?= BASEURL; ?>/profile/update" method="POST">
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold small">Username</label>
-                        <input type="text" class="form-control" value="<?= $user['username']; ?>" readonly style="background:#fff8ee;">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold small">Email</label>
-                        <input type="email" class="form-control" value="<?= $user['email']; ?>" readonly style="background:#fff8ee;">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold small">Nama Lengkap <span class="text-danger">*</span></label>
-                        <input type="text" name="name" class="form-control" value="<?= $user['name']; ?>" required style="border-color:#E4947D;">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold small">No. Telepon</label>
-                        <input type="text" name="phone" class="form-control" value="<?= $user['phone'] ?? ''; ?>" placeholder="08xxx" style="border-color:#E4947D;">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold small">Alamat Pengiriman</label>
-                        <textarea name="address" rows="3" class="form-control" placeholder="Alamat lengkap" style="border-color:#E4947D;"><?= $user['address'] ?? ''; ?></textarea>
-                    </div>
-                    <button type="submit" class="btn text-white fw-bold px-4" style="background:#E4947D; border:none; border-radius:8px;">
-                        <i class="bi bi-check-lg me-1"></i> Simpan Perubahan
-                    </button>
-                </form>
-            </div>
+<!-- ============================================
+     HERO BANNER - Edit Profil
+     ============================================ -->
+<section class="profile-hero-banner">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+        </nav>
+        <div class="banner-content">
+            <span class="banner-label">
+                <i class="bi bi-person-gear me-2"></i>AKUN SAYA
+            </span>
+            <p class="banner-description">
+                Perbarui informasi akun dan alamat pengiriman Anda
+            </p>
         </div>
+    </div>
+</section>
 
-        <!-- Password Tab -->
-        <div class="tab-pane fade" id="tab-password">
-            <div class="card border-0 shadow-sm p-4" style="background:#FAF3D6; border-radius:12px;">
-                <form action="<?= BASEURL; ?>/profile/changepassword" method="POST">
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold small">Password Lama <span class="text-danger">*</span></label>
-                        <input type="password" name="old_password" class="form-control" placeholder="Masukkan password lama" required style="border-color:#E4947D;">
+<!-- ============================================
+     SECTION EDIT PROFIL
+     ============================================ -->
+<section class="profile-section">
+    <div class="container">
+        <?php Helper::flash(); ?>
+
+        <div class="profile-wrapper">
+            <!-- Tabs -->
+            <div class="profile-tabs">
+                <button class="tab-button active" data-tab="profile">
+                    <i class="bi bi-person-fill me-2"></i>Data Diri
+                </button>
+                <button class="tab-button" data-tab="password">
+                    <i class="bi bi-lock-fill me-2"></i>Ubah Password
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content-wrapper">
+                <!-- Profile Tab -->
+                <div class="tab-pane active" id="tab-profile">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <div class="form-icon">
+                                <i class="bi bi-person-badge"></i>
+                            </div>
+                            <div>
+                                <h4>Informasi Data Diri</h4>
+                                <p>Perbarui informasi pribadi dan alamat pengiriman Anda</p>
+                            </div>
+                        </div>
+
+                        <form action="<?= BASEURL; ?>/profile/update" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="bi bi-at me-1"></i>Username
+                                    </label>
+                                    <input type="text" 
+                                           class="form-control readonly" 
+                                           value="<?= $user['username']; ?>" 
+                                           readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="bi bi-envelope me-1"></i>Email
+                                    </label>
+                                    <input type="email" 
+                                           class="form-control readonly" 
+                                           value="<?= $user['email']; ?>" 
+                                           readonly>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="bi bi-person me-1"></i>Nama Lengkap <span class="required">*</span>
+                                </label>
+                                <input type="text" 
+                                       name="name" 
+                                       class="form-control" 
+                                       value="<?= $user['name']; ?>" 
+                                       placeholder="Masukkan nama lengkap"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="bi bi-telephone me-1"></i>No. Telepon
+                                </label>
+                                <input type="text" 
+                                       name="phone" 
+                                       class="form-control" 
+                                       value="<?= $user['phone'] ?? ''; ?>" 
+                                       placeholder="Contoh: 08123456789">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="bi bi-geo-alt me-1"></i>Alamat Pengiriman
+                                </label>
+                                <textarea name="address" 
+                                          rows="3" 
+                                          class="form-control" 
+                                          placeholder="Masukkan alamat lengkap untuk pengiriman"><?= $user['address'] ?? ''; ?></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit">
+                                    <i class="bi bi-check-lg me-2"></i>Simpan Perubahan
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold small">Password Baru <span class="text-danger">*</span></label>
-                        <input type="password" name="new_password" class="form-control" placeholder="Minimal 6 karakter" required style="border-color:#E4947D;">
+                </div>
+
+                <!-- Password Tab -->
+                <div class="tab-pane" id="tab-password">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <div class="form-icon">
+                                <i class="bi bi-shield-lock"></i>
+                            </div>
+                            <div>
+                                <h4>Ubah Password</h4>
+                                <p>Amankan akun Anda dengan password yang kuat</p>
+                            </div>
+                        </div>
+
+                        <form action="<?= BASEURL; ?>/profile/changepassword" method="POST">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="bi bi-lock me-1"></i>Password Lama <span class="required">*</span>
+                                </label>
+                                <input type="password" 
+                                       name="old_password" 
+                                       class="form-control" 
+                                       placeholder="Masukkan password lama" 
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="bi bi-key me-1"></i>Password Baru <span class="required">*</span>
+                                </label>
+                                <input type="password" 
+                                       name="new_password" 
+                                       class="form-control" 
+                                       placeholder="Minimal 6 karakter" 
+                                       required>
+                                <small class="form-hint">Gunakan kombinasi huruf, angka, dan simbol untuk keamanan maksimal</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="bi bi-key-fill me-1"></i>Konfirmasi Password Baru <span class="required">*</span>
+                                </label>
+                                <input type="password" 
+                                       name="confirm_password" 
+                                       class="form-control" 
+                                       placeholder="Ulangi password baru" 
+                                       required>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit">
+                                    <i class="bi bi-lock me-2"></i>Ubah Password
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="mb-4">
-                        <label class="form-label fw-semibold small">Konfirmasi Password Baru <span class="text-danger">*</span></label>
-                        <input type="password" name="confirm_password" class="form-control" placeholder="Ulangi password baru" required style="border-color:#E4947D;">
-                    </div>
-                    <button type="submit" class="btn text-white fw-bold px-4" style="background:#E4947D; border:none; border-radius:8px;">
-                        <i class="bi bi-lock me-1"></i> Ubah Password
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<script>
+// Tab switching
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabPanes = document.querySelectorAll('.tab-pane');
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove active from all buttons
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+
+        // Show corresponding tab pane
+        const tabId = this.getAttribute('data-tab');
+        tabPanes.forEach(pane => {
+            pane.classList.remove('active');
+            if (pane.id === `tab-${tabId}`) {
+                pane.classList.add('active');
+            }
+        });
+    });
+});
+</script>
 
 <?php require_once '../views/templates/footer.php'; ?>

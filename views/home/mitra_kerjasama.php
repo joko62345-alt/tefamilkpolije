@@ -49,7 +49,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="value-card">
                     <div class="value-icon">
-                        <i class="bi bi-handshake"></i>
+                        <i class="fa-solid fa-handshake"></i>
                     </div>
                     <h5 class="value-title">Saling Menguntungkan</h5>
                     <p class="value-text">Kolaborasi yang memberikan manfaat bagi kedua belah pihak</p>
@@ -162,13 +162,13 @@
                 <div class="col-lg-5">
                     <div class="collab-images">
                         <div class="collab-img-wrapper">
-                            <img src="<?= BASEURL; ?>/image/header-bg.png" alt="Collaboration 1" class="collab-img">
+                            <img src="<?= BASEURL; ?>/image/4.jpeg" alt="Collaboration 1" class="collab-img">
                         </div>
                         <div class="collab-img-wrapper">
-                            <img src="<?= BASEURL; ?>/image/header-bg.png" alt="Collaboration 2" class="collab-img">
+                            <img src="<?= BASEURL; ?>/image/5.jpeg" alt="Collaboration 2" class="collab-img">
                         </div>
                         <div class="collab-img-wrapper">
-                            <img src="<?= BASEURL; ?>/image/header-bg.png" alt="Collaboration 3" class="collab-img">
+                            <img src="<?= BASEURL; ?>/image/6.jpeg" alt="Collaboration 3" class="collab-img">
                         </div>
                     </div>
                 </div>

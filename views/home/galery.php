@@ -5,20 +5,7 @@
      HERO BANNER - Galeri Milk
      ============================================ -->
 <section class="gallery-hero-banner">
-    <div class="banner-overlay"></div>
-    <div class="container position-relative z-2">
-        <div class="row align-items-center py-5">
-            <div class="col-lg-8 mx-auto text-center">
-                <span class="banner-label">
-                    <i class="bi bi-images me-2"></i>GALERI TEFA MILK
-                </span>
-                <h1 class="banner-title">Galeri Milk</h1>
-                <p class="banner-description mx-auto">
-                    Temukan momen, pengalaman, dan informasi menarik tentang TEFA Milk di sini.
-                </p>
-            </div>
-        </div>
-    </div>
+    
 </section>
 
 <!-- ============================================

@@ -13,6 +13,7 @@ class ProfileController extends Controller {
         $user   = $this->userModel->getUserById($userId);
         $data['title'] = 'Edit Profil – TEFA MILK';
         $data['user']  = $user;
+                $data['extra_css'] = ['../public/css/profile.css'];
         $this->view('profile/index', $data);
     }
 

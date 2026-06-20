@@ -5,14 +5,9 @@
 <section class="history-hero-banner">
     <div class="container">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb modern-breadcrumb">
-                <li class="breadcrumb-item"><a href="<?= BASEURL; ?>/home"><i class="bi bi-house-fill me-1"></i>Beranda</a></li>
-                <li class="breadcrumb-item active">Riwayat Pesanan</li>
-            </ol>
         </nav>
         <div class="banner-content">
-            <span class="banner-label"><i class="bi bi-clock-history me-2"></i>ORDER HISTORY</span>
-            <h1 class="banner-title">Riwayat Pesanan</h1>
+            <span class="banner-label"><i class="bi bi-clock-history me-2"></i>RIWAYAT PESANAN</span>
             <p class="banner-description">Daftar pesanan yang pernah Anda buat di TEFA MILK</p>
         </div>
     </div>
@@ -233,8 +228,7 @@
 
                     <div class="modal-footer-custom">
                         <button type="button" class="btn-cancel" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn-submit-review">
-                            <i class="bi bi-send me-1"></i>Kirim Ulasan
+                        <button type="submit" class="btn-submit-review">Kirim Ulasan
                         </button>
                     </div>
                 </form>
