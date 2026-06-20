@@ -1,747 +1,496 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* =========================================
+   KONTAK - MODERN & ELEGANT
+   ========================================= */
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #ffffff;
-  overflow-x: hidden;
-}
+/* ============================================
+   1. HERO BANNER
+   ============================================ */
 
-/* Hero Section */
-.hero-section {
+.contact-hero-banner {
     position: relative;
-    height: 30px; /* Sesuaikan tinggi sesuai kebutuhan */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    padding: 140px 0 60px;
+    background: linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);
 }
 
-.hero-section .carousel,
-.hero-section .carousel-inner,
-.hero-section .carousel-item {
-    height: 100%;
-}
-
-.hero-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(70%);
-}
-
-.hero-background {
+.banner-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 90%;
-    z-index: 1;
-}
-
-.hero-background img {
-    width: 100%;
     height: 100%;
-    object-fit: cover;
+    background: radial-gradient(circle at 80% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
 }
 
-.hero-content {
-    margin-top: 40px;
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: white;
+.modern-breadcrumb {
+    background: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    display: inline-flex;
 }
 
-.hero-content h1 {
-    font-size: 42px;
-    font-weight: bold;}
-
-.hero-content p {
-    font-size: 18px;
-    margin-bottom: 35px;
+.modern-breadcrumb .breadcrumb-item {
+    font-size: 0.9rem;
+    color: #64748B;
 }
-.hero-section {
-    position: relative;
-    height: 100vh;
-    margin-top: -90px; /* SESUAIKAN DENGAN TINGGI NAVBAR-MU */
-    display: flex;
+
+.modern-breadcrumb .breadcrumb-item a {
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.modern-breadcrumb .breadcrumb-item a:hover {
+    color: #1E40AF;
+}
+
+.modern-breadcrumb .breadcrumb-item.active {
+    color: #1E293B;
+    font-weight: 600;
+}
+
+.modern-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    color: #CBD5E1;
+    padding: 0 8px;
+}
+
+.banner-label {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-bottom: 0;
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563EB;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
-/* Contact Section */
-.contact-section {
-  /* padding: 4rem 0; */
+.banner-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.banner-description {
+    font-size: 1.1rem;
+    color: #64748B;
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    .contact-hero-banner {
+        padding: 120px 0 40px;
+    }
+    
+    .banner-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* ============================================
+   2. SECTION UMUM
+   ============================================ */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-label {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563EB;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
 }
 
 .section-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  color: #000000;
-  margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 1rem;
 }
 
-.contact-heading {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 27px;
-  color: #000000;
+.section-description {
+    font-size: 1.1rem;
+    color: #64748B;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
-.contact-description {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  color: #000000;
-  line-height: 1.5;
-  
+/* ============================================
+   3. CONTACT INFO SECTION
+   ============================================ */
+
+.contact-info-section {
+    padding: 80px 0;
+    background: white;
 }
 
-.contact-info-wrapper {
-  margin-top: 1rem;
-}
-
-
-.contact-details {
-  margin-left: 15px; /* konsisten */
-  margin-bottom: 20px;
-  margin-top: 15px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: flex-start;  /* PENTING! menyamakan dengan Figma */
-  gap: 15px;
-
-}
-
-.contact-icon {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #E4947D;
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 15px;
-}
-
-
-.contact-icon i {
-  font-size: 20px;
-  color: #000000;
-}
-
-
-.contact-label {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: #000000;
-  margin-bottom: 0.5rem;
-}
-
-.contact-value {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  color: #000000;
-  margin-bottom: 0.25rem;
-  line-height: 1.6;
-}
-.contact-divider {
-  border: none;
-  border-top: 5px solid #000000;
-  margin-top: -40px;   /* garis naik, ikon tetap */
-  margin-bottom: 20px; /* jarak ke ikon tetap rapi */
-  padding: 0;
-  width: 100%;
-  opacity: 1;
-}
-
-.contact-divider-bottom {
-  margin-top: 10px !important;  /* turunkan lebih rendah */
-}
-
-
-
-/* Social Media */
-
-.social-media-section {
-  margin-top: -10px;
-}
-
-.social-heading {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 25px;
-  color: #000000;
-  margin-bottom: 10px;
-}
-
-.social-icons {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-  text-decoration: none;
-  background-color: #E4947D;
-}
-
-.social-icon:hover {
-  transform: scale(1.1);
-  background-color: #d17d66;
-}
-
-.social-icon i {
-  font-size: 20px;
-  color: #000000;
-}
-
-/* Contact Form */
-.contact-form-card {
-  background-color: #ffffff;
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0px 6px 15px 5px rgba(0, 0, 0, 0.25);
-
-}
-
-/* Wrapper card */
-.form-wrapper {
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    background: #fff;
-    padding: 30px;             /* Tambah ruang biar tidak mepet */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* Label */
-.form-wrapper .form-label {
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-/* Input & textarea */
-.form-wrapper .form-control,
-.form-wrapper textarea {
-    width: 100%;               /* Agar semua elemen sama lebar */
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #e0e0e0;
-}
-
-/* Spasi antar elemen */
-.form-wrapper .mb-3,
-.form-wrapper .mb-4 {
-    margin-bottom: 20px !important;
-}
-
-/* Rating sejajar rapi */
-.rating-stars {
-    display: flex;
-    gap: 5px;
-}
-
-/* Style button */
-.btn-submit {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-}
-
-
-.form-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 28px;
-  color: #000000;
-}
-
-
-.form-description {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  color: #000000;
-}
-
-.form-label {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: #000000;
-  margin-bottom: 0.5rem;
-}
-
-.custom-input {
-  background-color: rgba(228, 148, 125, 0.15);
-  border: none;
-  border-radius: 5px;
-  padding: 0.75rem 1rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.custom-input::placeholder {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.custom-input:focus {
-  background-color: rgba(228, 148, 125, 0.2);
-  outline: none;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Rating Stars */
-.rating-stars {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.rating-stars .star {
-  font-size: 28px;
-  color: #ddd;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.rating-stars .star.active,
-.rating-stars .star:hover {
-  color: #FFD700;
-}
-
-.file-upload-icon {
-  width: 30px;
-  height: 30px;
-  background-color: rgba(228, 148, 125, 0.52);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.file-upload-icon i {
-  font-size: 20px;
-  color: #000000;
-}
-
-.file-upload-text {
-  flex: 1;
-}
-
-.file-upload-label {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  color: rgba(0, 0, 0, 0.5);
-  margin: 0;
-  cursor: pointer;
-}
-
-.file-name {
-  display: none;
-}
-
-/* Textarea */
-.custom-textarea {
-  background-color: rgba(228, 148, 125, 0.15);
-  border: none;
-  border-radius: 5px;
-  padding: 1rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  resize: vertical;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.custom-textarea::placeholder {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.custom-textarea:focus {
-  background-color: rgba(228, 148, 125, 0.2);
-  outline: none;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Submit Button */
-.btn-submit {
-  background-color: #E4947D;
-  border: none;
-  border-radius: 10px;
-  padding: 0.5rem 1.5rem;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  color: #ffffff;
-  box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
-  width: auto;
-  max-width: 150px;
-}
-
-.btn-submit:hover {
-  background-color: #f0baab;
-  transform: translateY(-2px);
-  box-shadow: 0px 5px 8px 2px rgba(0, 0, 0, 0.6);
-  color: #fff;
-}
-
-
-/* FIX NAVBAR RESPONSIVE */
-.navbar {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-.navbar-collapse {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 15px;
-    border-radius: 12px;
-}
-
-.navbar-nav .nav-link {
-    white-space: nowrap;  /* Menghindari teks turun aneh */
-}
-
-/* MAP WRAPPER */
-.map-wrapper {
-    width: 100%;
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 2rem;
 }
 
-/* MAP FRAME – DESKTOP */
-.map-wrapper iframe {
-    width: 100% !important;
-    min-height: 350px !important;
-    height: 350px;
-    border: 0;
-    border-radius: 15px;
-    display: block;              /* Fix Android Blank */
-    background: #f0f0f0;         /* Prevent invisible blank */
+.contact-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* TABLET */
-@media (max-width: 992px) {
-    .map-wrapper iframe {
-        height: 280px !important;
-        min-height: 280px !important;
-    }
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
 }
 
-/* MOBILE */
-@media (max-width: 576px) {
-    .map-wrapper iframe {
-        height: 200px !important;
-        min-height: 200px !important;
-    }
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
 }
 
+.contact-card:hover::before {
+    transform: scaleX(1);
+}
+
+.contact-card-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.contact-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 1.25rem;
+}
+
+.contact-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background: #F8FAFC;
+    color: #1E293B;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    word-break: break-word;
+}
+
+.contact-link i {
+    color: #2563EB;
+    font-size: 1rem;
+}
+
+.contact-link:hover {
+    background: #2563EB;
+    color: white;
+    transform: translateX(5px);
+}
+
+.contact-link:hover i {
+    color: white;
+}
 
 @media (max-width: 768px) {
-    .navbar-brand img {
-        width: 110px !important;
-    }
-
-    .navbar {
-        padding: 8px 15px !important;
-    }
-
-    .navbar-collapse {
-        text-align: center;
-        padding: 20px 10px !important;
-    }
-
-    .navbar-nav {
-        gap: 5px;
-    }
-
-    .nav-link {
-        font-size: 16px !important;
-    }
-}
-
-/* Responsive untuk HP & Tablet (<=768px) */
-@media (max-width: 600px) {
-
-    /* HERO */
-    .hero-section {
-        height: 61vh;
-        margin-top: 0px;
-        margin-bottom: 25px;
-    }
-
-    .hero-content {
-        width: 94%;
-        padding: 18px;
-    }
-
-    .hero-content h1 {
-        font-size: 28px;
-        margin-bottom: 8px;
-    }
-
-    .hero-content p {
-        font-size: 14px;
-        margin-bottom: 18px;
-        padding: 0 20px;
-    }
-
-    /* Contact Section */
-    .contact-heading {
-        font-size: 22px;
-        text-align: center;
-    }
-
-    .contact-description {
-        font-size: 14px;
-        text-align: center;
-        padding: 0 10px;
-    }
-
-    .contact-details {
-        margin-left: 0;
-    }
-
-    .contact-item {
-        gap: 10px;
-    }
-
-    .contact-icon {
-        width: 45px;
-        height: 45px;
-        margin-top: 19px;
-    }
-
-    .contact-icon i {
-        font-size: 18px;
-    }
-
-    .contact-label {
-        font-size: 16px;
-    }
-
-    .contact-value {
-        font-size: 14px;
-    }
-
-    .contact-divider {
-        border-top: 3px solid #000;
-        margin-top: -20px;
-    }
-
-    /* Social Media */
-    .social-heading {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-
-    .social-icon {
-        width: 45px;
-        height: 45px;
-    }
-
-    .social-icon i {
-        font-size: 18px;
-    }
-
-    /* Form */
-    .form-wrapper {
-        padding: 20px;
-        margin-top: 15px;
-    }
-
-    .form-title {
-        font-size: 22px;
-        text-align: center;
-    }
-
-    .form-description {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .form-label {
-        font-size: 16px;
-    }
-
-    .custom-input,
-    .custom-textarea {
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    .rating-stars .star {
-        font-size: 22px;
-    }
-
-    .btn-submit {
-        width: 100%;
-        max-width: none;
-        font-size: 16px;
-    }
-
-    /* Navbar container */
-    .navbar {
-        padding: 10px 15px;
-    }
-
-    /* Logo */
-    .navbar-brand img {
-        width: 120px;    /* kecil agar pas layar HP */
-        height: auto;
-    }
-
-    /* Toggle (hamburger) agar muncul di HP */
-    .navbar-toggler {
-        border: none;
-        outline: none;
-        box-shadow: none;
-    }
-
-    .navbar-toggler-icon {
-        width: 28px;
-        height: 28px;
-    }
-
-    /* Dropdown menu HP */
-    .navbar-collapse {
-        padding: 15px;
-        border-radius: 10px;
-    }
-
-    .navbar-nav {
-        text-align: center;
-        gap: 10px;
-    }
-
-    .nav-link {
-        font-size: 16px;
-        font-weight: 600;
-        padding: 8px 0;
-    }
-}
-
-/* ============================
-   RESPONSIVE MOBILE SUPPORT
-   max-width: 576px
-===============================*/
-@media (max-width: 576px) {
-
-    /* --- HERO SECTION --- */
-    .hero-section {
-        padding: 40px 15px;
-    }
-
-    .hero-title {
-        font-size: 28px;
-    }
-
-    .hero-subtitle {
-        font-size: 14px;
-        padding: 0 10px;
-    }
-
-    .milk-splash {
-        width: 140px !important;
-        opacity: 0.6;
-    }
-
-    /* --- CONTACT LEFT --- */
-    .contact-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-        margin-bottom: 20px;
-    }
-
-    .contact-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-    }
-
-    .contact-label {
-        font-size: 16px;
-    }
-
-    .contact-value a {
-        font-size: 14px;
-    }
-
-    .contact-description {
-        font-size: 14px;
+    .contact-info-section {
+        padding: 60px 0;
     }
     
-    hr.contact-divider {
-        margin: 20px 0;
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
+}
 
-    /* --- SOCIAL ICONS --- */
-    .social-icons {
-        display: flex;
-        gap: 12px;
-        justify-content: flex-start;
+/* ============================================
+   4. SOCIAL MEDIA SECTION
+   ============================================ */
+
+.social-media-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);
+}
+
+.social-wrapper {
+    background: white;
+    border-radius: 24px;
+    padding: 60px 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.social-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border: 2px solid #E2E8F0;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.social-card:hover .social-icon-wrapper {
+    transform: scale(1.1);
+}
+
+.social-info h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1E293B;
+    margin: 0 0 2px;
+}
+
+.social-info span {
+    font-size: 0.8rem;
+    color: #64748B;
+}
+
+.social-arrow {
+    margin-left: auto;
+    color: #CBD5E1;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-card:hover .social-arrow {
+    color: #2563EB;
+    transform: translateX(5px);
+}
+
+/* Warna spesifik per platform */
+.social-card.instagram .social-icon-wrapper {
+    background: linear-gradient(135deg, #E1306C 0%, #F77737 50%, #FCAF45 100%);
+}
+
+.social-card.instagram:hover {
+    border-color: #E1306C;
+}
+
+.social-card.youtube .social-icon-wrapper {
+    background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+}
+
+.social-card.youtube:hover {
+    border-color: #FF0000;
+}
+
+.social-card.facebook .social-icon-wrapper {
+    background: linear-gradient(135deg, #1877F2 0%, #0D5BC4 100%);
+}
+
+.social-card.facebook:hover {
+    border-color: #1877F2;
+}
+
+.social-card.twitter .social-icon-wrapper {
+    background: linear-gradient(135deg, #1DA1F2 0%, #0C85D0 100%);
+}
+
+.social-card.twitter:hover {
+    border-color: #1DA1F2;
+}
+
+@media (max-width: 768px) {
+    .social-wrapper {
+        padding: 40px 25px;
     }
-
-    .social-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
+    
+    .social-grid {
+        grid-template-columns: 1fr;
     }
+}
 
-    /* --- FORM SECTION (KANAN) --- */
-    .form-wrapper {
-        padding: 20px !important;
+/* ============================================
+   5. MAP SECTION
+   ============================================ */
+
+.map-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.map-wrapper {
+    background: white;
+    border-radius: 24px;
+    padding: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    margin-bottom: 2rem;
+}
+
+.map-wrapper iframe {
+    display: block;
+    border-radius: 16px;
+}
+
+/* Map Info Cards */
+.map-info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.map-info-card {
+    background: linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    transition: all 0.3s ease;
+}
+
+.map-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
+    border-color: #2563EB;
+}
+
+.map-info-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+.map-info-text h6 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 8px;
+}
+
+.map-info-text p {
+    font-size: 0.9rem;
+    color: #64748B;
+    margin: 0 0 4px;
+    line-height: 1.5;
+}
+
+.map-info-text p:last-child {
+    margin-bottom: 0;
+}
+
+.map-info-text a {
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.map-info-text a:hover {
+    color: #1E40AF;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .map-section {
+        padding: 60px 0;
     }
-
-    .custom-input,
-    .custom-textarea {
-        font-size: 14px;
+    
+    .map-info-cards {
+        grid-template-columns: 1fr;
     }
-
-    .rating-stars .star {
-        font-size: 22px;
-        margin-right: 3px;
-    }
-
-    .btn-submit {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
-    }
-
-    /* --- MAP --- */
-    .map-wrapper iframe {
-        height: 320px !important;
+    
+    .section-title {
+        font-size: 2rem;
     }
 }

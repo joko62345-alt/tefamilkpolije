@@ -11,7 +11,7 @@ class CatalogController extends Controller {
 
     public function index() {
         $data['title'] = 'TEFA MILK – Katalog Produk';
-        $data['extra_css'] = ['main_page_katalog.css'];
+        $data['extra_css'] = ['../public/css/catalog.css'];
         $data['extra_js'] = ['main_page_katalog.js'];
         $data['products'] = $this->productModel->getAllProducts();
         $data['categories'] = $this->categoryModel->getAllCategories();
@@ -30,7 +30,7 @@ class CatalogController extends Controller {
         }
 
         $data['title'] = 'TEFA MILK – Detail ' . $product['name'];
-        $data['extra_css'] = ['detail_produk_katalog.css'];
+        $data['extra_css'] = ['../public/css/detailproduk.css'];
         $data['product'] = $product;
         $this->view('catalog/detail', $data);
     }

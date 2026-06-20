@@ -1,7 +1,7 @@
 <?php
 $current_page = isset($_GET['url']) ? rtrim($_GET['url'], '/') : '';
 
-// Calculate cart count dynamically if customer is logged in
+// Calculate cart count dynamically
 $cartCount = 0;
 if (Helper::isLoggedIn() && Helper::getUserRole() === 'customer') {
     try {
@@ -17,87 +17,102 @@ if (Helper::isLoggedIn() && Helper::getUserRole() === 'customer') {
     }
 }
 ?>
-<nav class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
-    <div class="container px-4">
-        <img src="<?= BASEURL; ?>/image/polije.png" alt="Logo Politeknik" class="navbar-logo" style="max-height: 40px;">
-        <a class="navbar-brand ms-3 fw-bold" href="<?= BASEURL; ?>/home">TEFA MILK</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container px-4">
+        <!-- Logo & Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="<?= BASEURL; ?>/home">
+            <img src="<?= BASEURL; ?>/image/polije.png" alt="Logo Politeknik" class="navbar-logo" style="max-height: 40px;">
+            <span class="ms-3 fw-bold fs-5" style="color: #1E293B;">TEFA MILK</span>
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto nav-underline align-items-center">
+            <!-- HAPUS class nav-underline di sini! -->
+            <ul class="navbar-nav ms-auto align-items-center">
+                <!-- Menu Beranda -->
                 <li class="nav-item">
                     <a class="nav-link <?= ($current_page === '' || $current_page === 'home' || $current_page === 'home/index') ? 'active' : ''; ?>" href="<?= BASEURL; ?>/home">Beranda</a>
                 </li>
                 
-                <!-- Dropdown for Profil pages -->
+                <!-- Dropdown Profil -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <?= (strpos($current_page, 'home/profil') !== false || $current_page === 'home/tentang') ? 'active' : ''; ?>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle <?= (strpos($current_page, 'home/profil') !== false || $current_page === 'home/tentang') ? 'active' : ''; ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Profil
                     </a>
-                    <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdown" style="background-color: #FAF3D6;">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="<?= BASEURL; ?>/home/profil_perusahaan">Profil Perusahaan</a></li>
                         <li><a class="dropdown-item" href="<?= BASEURL; ?>/home/profil_tim">Profil Tim</a></li>
                         <li><a class="dropdown-item" href="<?= BASEURL; ?>/home/tentang">Tentang Kami</a></li>
                     </ul>
                 </li>
                 
+                <!-- Menu Lainnya -->
                 <li class="nav-item">
-                    <a class="nav-link <?= (strpos($current_page, 'catalog') !== false) ? 'active' : ''; ?>" href="<?= BASEURL; ?>/catalog">Katalog Produk</a>
+                    <a class="nav-link <?= (strpos($current_page, 'catalog') !== false) ? 'active' : ''; ?>" href="<?= BASEURL; ?>/catalog">Katalog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= ($current_page === 'home/galery') ? 'active' : ''; ?>" href="<?= BASEURL; ?>/home/galery">Galeri Milk</a>
+                    <a class="nav-link <?= ($current_page === 'home/galery') ? 'active' : ''; ?>" href="<?= BASEURL; ?>/home/galery">Galeri</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= ($current_page === 'home/mitra_kerjasama') ? 'active' : ''; ?>" href="<?= BASEURL; ?>/home/mitra_kerjasama">Mitra Kerjasama</a>
+                    <a class="nav-link <?= ($current_page === 'home/mitra_kerjasama') ? 'active' : ''; ?>" href="<?= BASEURL; ?>/home/mitra_kerjasama">Mitra</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?= ($current_page === 'home/kontak') ? 'active' : ''; ?>" href="<?= BASEURL; ?>/home/kontak">Kontak</a>
                 </li>
 
+                <!-- Separator -->
+                <div class="mx-2 d-none d-lg-block" style="width: 1px; height: 24px; background: #E2E8F0;"></div>
+
                 <!-- User Session Actions -->
                 <?php if (Helper::isLoggedIn()): ?>
                     <?php if (Helper::getUserRole() === 'customer'): ?>
-                        <li class="nav-item ms-lg-2 position-relative">
-                            <a class="nav-link <?= (strpos($current_page, 'cart') !== false && strpos($current_page, 'history') === false) ? 'active' : ''; ?>" href="<?= BASEURL; ?>/cart">
+                        <!-- Cart Icon -->
+                        <li class="nav-item me-2 position-relative">
+                            <a class="nav-link px-2" href="<?= BASEURL; ?>/cart">
                                 <i class="bi bi-cart3 fs-5"></i>
                                 <?php if ($cartCount > 0): ?>
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem;">
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #2563EB; font-size: 0.65rem;">
                                         <?= $cartCount; ?>
                                     </span>
                                 <?php endif; ?>
                             </a>
                         </li>
-                        <li class="nav-item dropdown ms-lg-3">
-                            <a class="btn btn-outline-dark dropdown-toggle px-3 py-1 fw-semibold" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 20px; border-color: #E4947D; color: #d6836c;">
-                                <i class="bi bi-person-circle me-1"></i> <?= explode(' ', Helper::getUserName())[0]; ?>
+                        
+                        <!-- User Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px; background: #F0F9FF;">
+                                    <i class="bi bi-person-fill" style="color: #2563EB;"></i>
+                                </div>
+                                <span class="fw-medium d-none d-lg-block"><?= explode(' ', Helper::getUserName())[0]; ?></span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm" aria-labelledby="userDropdown" style="background-color: #FAF3D6;">
+                            <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="<?= BASEURL; ?>/profile"><i class="bi bi-person me-2"></i>Edit Profil</a></li>
                                 <li><a class="dropdown-item" href="<?= BASEURL; ?>/cart/history"><i class="bi bi-bag-check me-2"></i>Riwayat Pesanan</a></li>
-                                <li><hr class="dropdown-divider"></li>
+                                <li><hr class="dropdown-divider my-2"></li>
                                 <li><a class="dropdown-item text-danger" href="<?= BASEURL; ?>/auth/logout"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
                             </ul>
                         </li>
+
                     <?php elseif (Helper::getUserRole() === 'admin'): ?>
-                        <li class="nav-item ms-lg-3">
-                            <a class="btn btn-dark px-3 py-1 fw-semibold me-2" href="<?= BASEURL; ?>/admin" style="background: #2d2a26; border: none; border-radius: 20px;">
+                        <li class="nav-item ms-lg-2">
+                            <a class="btn btn-primary btn-sm px-3 py-2" href="<?= BASEURL; ?>/admin">
                                 <i class="bi bi-speedometer2 me-1"></i> Dashboard
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="btn btn-outline-danger px-3 py-1 fw-semibold" href="<?= BASEURL; ?>/auth/logout" style="border-radius: 20px;">
-                                <i class="bi bi-box-arrow-right me-1"></i> Logout
-                            </a>
+                        <li class="nav-item ms-2">
+                            <a class="btn btn-outline-danger btn-sm px-3 py-2" href="<?= BASEURL; ?>/auth/logout">Logout</a>
                         </li>
                     <?php endif; ?>
                 <?php else: ?>
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                        <a class="btn btn-outline-dark px-3 py-1 fw-semibold me-2" href="<?= BASEURL; ?>/auth/login" style="border-radius: 20px; border-color: #E4947D; color: #d6836c;">Login</a>
-                        <a class="btn text-white px-3 py-1 fw-semibold" href="<?= BASEURL; ?>/auth/register" style="border-radius: 20px; background: #E4947D;">Daftar</a>
+                    <!-- Guest Buttons - UBAH class-nya! -->
+                    <li class="nav-item ms-lg-2 d-flex gap-2">
+                        <a class="btn btn-outline-primary btn-sm px-4 py-2 fw-medium" href="<?= BASEURL; ?>/auth/login">Login</a>
+                        <a class="btn btn-primary btn-sm px-4 py-2 fw-medium" href="<?= BASEURL; ?>/auth/register">Daftar</a>
                     </li>
                 <?php endif; ?>
             </ul>

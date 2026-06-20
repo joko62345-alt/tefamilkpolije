@@ -79,11 +79,15 @@ class OrderModel {
 
         $needsStockUpdate = false;
         $direction = 0;
-        if ($order['status'] !== 'Selesai' && $status === 'Selesai') {
+
+        // Stok dikurangi saat pesanan mulai diproses atau selesai langsung dari menunggu.
+        if ($order['status'] === 'Menunggu' && ($status === 'Diproses' || $status === 'Selesai')) {
             $needsStockUpdate = true;
             $direction = -1;
         }
-        if ($order['status'] === 'Selesai' && $status !== 'Selesai') {
+
+        // Stok kembali jika pesanan dikembalikan ke menunggu.
+        if (($order['status'] === 'Diproses' || $order['status'] === 'Selesai') && $status === 'Menunggu') {
             $needsStockUpdate = true;
             $direction = 1;
         }

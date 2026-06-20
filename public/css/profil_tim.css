@@ -1,336 +1,351 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================================
+   PROFIL TIM - MODERN & ELEGANT
+   ========================================= */
+
+/* ============================================
+   1. HERO BANNER
+   ============================================ */
+
+.team-hero-banner {
+    position: relative;
+    padding: 140px 0 80px;
+    background: linear-gradient(135deg, #1E40AF 0%, #2563EB 50%, #3B82F6 100%);
+    overflow: hidden;
 }
 
-body {
-    font-family: 'Poppins', Arial, sans-serif;
-    background-color: white;
-}
-
-
-.hero-bg-img {
+.team-hero-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(70%);
+    height: 60px;
+    background: white;
+    clip-path: ellipse(60% 100% at 50% 100%);
 }
 
-.hero-background {
+.banner-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
+    background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
     z-index: 1;
 }
 
-.hero-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.banner-label {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.hero-content {
-    margin-top: 40px;
+.banner-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.banner-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.team-hero-banner .btn-primary {
+    background: white;
+    color: #2563EB;
+    border: none;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.team-hero-banner .btn-primary:hover {
+    background: #F0F9FF;
+    color: #1E40AF;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 2.2rem;
+    }
+    
+    .team-hero-banner {
+        padding: 120px 0 60px;
+    }
+}
+
+/* ============================================
+   2. SECTION INTRO TIM
+   ============================================ */
+
+.team-intro-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.team-intro-image-wrapper {
+    position: relative;
+    padding: 20px;
+}
+
+.team-intro-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 2;
-    text-align: center;
-    color: white;
 }
 
-.hero-content h1 {
-    font-size: 42px;
-    font-weight: bold;
-    margin-bottom: 30px;
-}
-
-.hero-content p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.hero-section {
-    position: relative;
-    height: 100vh;
-    margin-top: -90px; /* SESUAIKAN DENGAN TINGGI NAVBAR-MU */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-bottom: 0;
-}
-
-.hero-btn-primary {
-    background: #E4947D;
-    color: #ffffff;
-    padding: 8px 35px;
-    border-radius: 10px;
-    border: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
-    margin-right: 5px;
-    text-decoration: none;
-}
-
-.hero-btn-primary:hover {
-    background: #f0baab;
-    transform: scale(1.05);
-}
-/* ===================================
-   TEAM SECTION
-   =================================== */
-.team-section {
-    background: linear-gradient(to bottom, white);
-    padding: 50px;
-    margin: 30px auto;
-    margin-top: 0;
-    max-width: 1200px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* ===================================
-   TEAM INTRODUCTION (FOTO + DESKRIPSI)
-   =================================== */
-.team-intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 50px;
-    align-items: center;
-}
-
-.team-image {
-    width: 100%;
-    height: 300px;
-    background: #e0e0e0;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    font-style: italic;
-    overflow: hidden;
-}
-
-.team-image img {
+.image-decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    border-radius: 20px;
+    z-index: 1;
+    transform: translate(20px, 20px);
+}
+
+.section-subtitle {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563EB;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 1.5rem;
 }
 
 .team-description {
-    text-align: justify;
+    font-size: 1rem;
+    color: #64748B;
     line-height: 1.8;
-    color: #000;
-    font-style:condensed;
+    margin-bottom: 1rem;
 }
 
-.team-description h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-style:condensed;
+/* Stats */
+.team-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #E2E8F0;
 }
 
-/* ===================================
-   TEAM MEMBERS GRID
-   =================================== */
-.team-grid {
-    margin-top: 50px;
-}
-
-.team-grid h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 30px;
+.stat-item {
     text-align: center;
 }
 
-.members-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #2563EB;
+    margin-bottom: 0.5rem;
 }
 
-/* ===================================
-   MEMBER CARD STYLING
-   =================================== */
+.stat-label {
+    font-size: 0.9rem;
+    color: #64748B;
+    margin: 0;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .team-stats {
+        justify-content: center;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* ============================================
+   3. SECTION ANGGOTA TIM
+   ============================================ */
+
+.team-members-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #64748B;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .member-card {
     background: white;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.4s ease;
 }
 
 .member-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+}
+
+.member-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+    background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
 }
 
 .member-image {
     width: 100%;
-    height: 300px;
-    background: #e0e0e0;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.member-card:hover .member-image {
+    transform: scale(1.1);
+}
+
+.member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 99, 235, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #666;
-    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.member-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top; /* BIAR WAJAH TAMPIL SEMUA */
+.member-card:hover .member-overlay {
+    opacity: 1;
 }
 
+.member-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563EB;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #1E40AF;
+    color: white;
+    transform: translateY(-3px);
+}
 
 .member-info {
-    padding: 20px;
+    padding: 25px;
     text-align: center;
 }
 
 .member-name {
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 0.5rem;
 }
 
 .member-role {
-    color: #666;
+    font-size: 1rem;
+    color: #2563EB;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.member-divider {
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #2563EB, #3B82F6);
+    margin: 0 auto 1rem;
+    border-radius: 3px;
+}
+
+.member-desc {
     font-size: 0.9rem;
+    color: #64748B;
+    line-height: 1.6;
+    margin: 0;
 }
-
-
-/* Responsive */
-@media (max-width: 991px) {
-    .navbar-brand {
-        font-size: 24px;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 18px;
-    }
-
-    .hero-title {
-        font-size: 36px;
-    }
-
-    .hero-subtitle {
-        font-size: 20px;
-    }
-
-    .milk-splash {
-        height: 250px;
-    }
-
-    .section-title {
-        font-size: 36px;
-    }
-
-    .contact-heading {
-        font-size: 28px;
-    }
-
-    .form-title {
-        font-size: 28px;
-    }
-}
-
-/* ===========================
-      RESPONSIVE UNTUK HP
-   =========================== */
 
 @media (max-width: 768px) {
-
-    /* HERO */
-    .hero-section {
-        height: 61vh;
-        margin-top: 0px; /* sesuaikan agar tidak tertutup navbar */
-        margin-bottom: 25px;
+    .members-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
     }
-
-    .hero-content {
-            width: 94%;
-            padding: 18px;
-        }
-        
-    .hero-content h1 {
-        font-size: 28px;
-        margin-bottom: 25px;
+    
+    .member-image-wrapper {
+        height: 240px;
     }
+}
 
-    .hero-content p {
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-
-    .hero-btn-primary {
-        padding: 10px 24px;
-        font-size: 15px;
-    }
-
-    /* TEAM INTRO FOTO + TEKS → jadi 1 kolom */
-    .team-intro {
+@media (max-width: 480px) {
+    .members-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .team-image {
-        height: 220px;
-    }
-
-    .team-description {
-        text-align: left;
-        padding: 0 10px;
-    }
-
-    .team-description h2 {
-        text-align: center;
-        font-size: 1.3rem;
-    }
-
-    /* TEAM GRID PADA HP */
-    .team-grid h2 {
-        font-size: 1.3rem;
-    }
-
-    .members-container {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 20px;
-    }
-
-    .member-card {
-        border-radius: 14px;
-    }
-
-    .member-image {
-        height: 180px;
-    }
-
-    .member-image img {
-        object-position: top;
-    }
-
-    .member-info {
-        padding: 15px;
-    }
-
-    .member-name {
-        font-size: 1rem;
-    }
-
-    .member-role {
-        font-size: 0.85rem;
     }
 }

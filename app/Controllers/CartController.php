@@ -18,7 +18,9 @@ class CartController extends Controller {
         $data['title'] = 'Keranjang Belanja – TEFA MILK';
         $data['items'] = $this->cartModel->getCartItems($userId);
         $data['total'] = $this->cartModel->getCartTotal($userId);
+        $data['extra_css'] = ['../public/css/cart.css'];
         $this->view('cart/index', $data);
+          
     }
 
     // Add item to cart
@@ -28,11 +30,16 @@ class CartController extends Controller {
         }
 
         $userId    = Helper::getUserId();
-        $productId = (int)$_POST['product_id'];
+        $productId = (int)($_POST['product_id'] ?? 0);
         $quantity  = max(1, (int)$_POST['quantity']);
 
         $product = $this->productModel->getProductById($productId);
-        if (!$product || $product['stock'] < $quantity) {
+        if (!$product) {
+            Helper::setFlash('danger', 'Produk tidak ditemukan.');
+            Helper::redirect('catalog');
+        }
+
+        if ($product['stock'] < $quantity) {
             Helper::setFlash('danger', 'Stok tidak mencukupi.');
             Helper::redirect('catalog/detail/' . $productId);
         }
@@ -84,6 +91,7 @@ class CartController extends Controller {
         $data['items']   = $items;
         $data['total']   = $this->cartModel->getCartTotal($userId);
         $data['user']    = $user;
+        $data['extra_css'] = ['../public/css/checkout.css'];
         $this->view('cart/checkout', $data);
     }
 
@@ -168,6 +176,7 @@ class CartController extends Controller {
 
         $data['title'] = 'Riwayat Pesanan – TEFA MILK';
         $data['orders'] = $orders;
+        $data['extra_css'] = ['../public/css/history.css'];
         $this->view('cart/history', $data);
     }
 
@@ -243,8 +252,9 @@ class CartController extends Controller {
             Helper::redirect('cart/history');
         }
 
-        if ($order['status'] !== 'Selesai') {
-            Helper::setFlash('danger', 'Hanya pesanan yang selesai yang bisa diberi ulasan.');
+        // Allow review if order is marked 'Selesai' OR if customer has uploaded delivery proof
+        if ($order['status'] !== 'Selesai' && empty($order['delivery_proof'])) {
+            Helper::setFlash('danger', 'Hanya pesanan yang selesai atau yang memiliki bukti penerimaan yang bisa diberi ulasan.');
             Helper::redirect('cart/history');
         }
 

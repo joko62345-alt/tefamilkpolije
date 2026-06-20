@@ -1,192 +1,218 @@
-/* ================================
-   BASE NAVBAR
-================================ */
+/* =========================================
+   NAVBAR - WHITE & CLEAN
+   ========================================= */
 
-.navbar {
-  background-color: #FAF3D6;
-  padding: 0.75rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-}
-
-.navbar-logo {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-}
-
-.navbar-brand {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 28px;
-  color: #000000;
-  margin-left: 1rem;
-  transition: 0.3s ease;
-  white-space: nowrap;
-}
-
-/* Navbar items horizontal alignment */
-.navbar-nav {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.navbar-nav .nav-item {
-  margin-bottom: 0 !important;
-  white-space: nowrap;
-}
-
-.navbar-nav .nav-link {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: #000000;
-  padding: 0.5rem 0.75rem;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #E4947D;
-}
-
-.navbar-nav .nav-link.active {
-  color: #000000;
-  border-bottom: 3px solid #E4947D;
-}
-
-/* ================================
-   NAVBAR SCROLL EFFECT
-================================ */
-
-/* Transparan awal */
+/* Navbar utama - putih bersih */
 .custom-navbar {
-    background: rgba(255, 255, 255, 0);
-    box-shadow: none !important;   /* ← hilangkan shadow */
-    transition: 0.3s ease;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06) !important;
+    border-bottom: 1px solid #E5E7EB !important;
+    transition: all 0.3s ease !important;
+    padding: 15px 0 !important;
 }
 
-/* Saat scroll berubah warna */
 .custom-navbar.scrolled {
-    background: #FAF3D6;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background-color: #FFFFFF !important;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1) !important;
+    padding: 10px 0 !important;
 }
 
-/* ================================
-   HAMBURGER BUTTON
-================================ */
-
-.navbar-toggler {
-  border: none !important;
-  outline: none !important;
-  padding: 6px 8px;
+/* Link navbar */
+.custom-navbar .nav-link {
+    color: #1E293B !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    padding: 8px 16px !important;
+    margin: 0 4px !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    position: relative !important;
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 16 16'%3E%3Cpath stroke='black' stroke-width='2' d='M2 4h12M2 8h12M2 12h12'/%3E%3C/svg%3E");
+.custom-navbar .nav-link:hover {
+    color: #2563EB !important;
+    background-color: rgba(37, 99, 235, 0.08) !important;
 }
 
-/* ================================
-   RESPONSIVE FOR HP
-================================ */
-
-@media (max-width: 768px) {
-
-  /* Brand mengecil di HP */
-  .navbar-brand {
-    font-size: 22px;
-    margin-left: 0.5rem;
-  }
-
-  .navbar-logo {
-    width: 32px;
-    height: 32px;
-  }
-
-  /* Menu collapse style */
-  .navbar-collapse {
-    background: #FAF3D6;
-    padding: 15px;
-    border-radius: 0 0 18px 18px;
-    margin-top: 12px;
-  }
-
-  /* Saat hamburger dibuka */
-  .navbar-collapse.show {
-      background: #FAF3D6 !important;
-      padding: 15px;
-      border-radius: 0 0 16px 16px;
-  }
-
-  /* Override flex untuk mobile */
-  .navbar-nav {
-    display: flex !important;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 0;
-  }
-
-  /* Link menu di HP */
-  .navbar-nav .nav-link {
-    padding: 12px 10px;
-    font-size: 16px;
-    border-bottom: 2px solid transparent;
-  }
-
-  .navbar-nav .nav-link.active {
-    border: none;
-    color: #E4947D;
-    font-weight: 700;
-  }
-
-  /* Hover effect HP */
-  .navbar-nav .nav-link:hover {
-    background: #fdc462;
-    border-radius: 10px;
-  }
-
-  /* supaya menu full width */
-  .navbar-nav {
-    width: 100%;
-  }
-
-  /* Tambah jarak bawah menu */
-  .nav-item {
-    margin-bottom: 3px;
-  }
+.custom-navbar .nav-link.active {
+    color: #2563EB !important;
+    font-weight: 600 !important;
+    background-color: rgba(37, 99, 235, 0.08) !important;
 }
 
-/* ================================
-   SUPER SMALL (max-width: 420px)
-================================ */
-
-@media (max-width: 420px) {
-  .navbar-brand {
-    font-size: 20px;
-  }
-
-  .navbar-logo {
-    width: 28px;
-    height: 28px;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 15px;
-    padding: 10px 8px;
-  }
+/* PENTING: Hilangkan semua garis bawah dari nav-underline Bootstrap */
+.custom-navbar .nav-link::after,
+.custom-navbar .nav-link.active::after,
+.navbar-nav .nav-link::after,
+.navbar-nav .nav-link.active::after {
+    display: none !important;
+    border-bottom: none !important;
+    content: none !important;
 }
 
-@media (max-width: 768px) {
-    .navbar-nav .nav-link.active::after {
-        display: none; /* hilangkan underline di HP */
-    }
+/* Dropdown menu */
+.custom-navbar .dropdown-menu {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E5E7EB !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    padding: 10px !important;
+    margin-top: 10px !important;
+    min-width: 200px !important;
+}
 
-    .navbar-nav .nav-link.active {
-        background: #ffdea5;
-        border-radius: 10px;
-        color: #000000;
-    }
+.custom-navbar .dropdown-item {
+    border-radius: 8px !important;
+    padding: 10px 15px !important;
+    color: #1E293B !important;
+    transition: all 0.2s ease !important;
+    font-size: 0.9rem !important;
+}
+
+.custom-navbar .dropdown-item:hover {
+    background-color: rgba(37, 99, 235, 0.08) !important;
+    color: #2563EB !important;
+    transform: translateX(5px);
+}
+
+/* Tombol di navbar */
+.custom-navbar .btn-primary {
+    background-color: #2563EB !important;
+    border-color: #2563EB !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3) !important;
+}
+
+.custom-navbar .btn-primary:hover {
+    background-color: #1E40AF !important;
+    border-color: #1E40AF !important;
+    transform: translateY(-2px);
+}
+
+.custom-navbar .btn-outline-primary {
+    border: 2px solid #2563EB !important;
+    color: #2563EB !important;
+    background: transparent !important;
+}
+
+.custom-navbar .btn-outline-primary:hover {
+    background-color: #2563EB !important;
+    color: #FFFFFF !important;
+}
+
+/* Logo */
+.navbar-logo {
+    transition: transform 0.3s ease;
+}
+
+.custom-navbar:hover .navbar-logo {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   NUCLEAR OVERRIDE - PAKSA NAVBAR PUTIH
+   ========================================= */
+
+/* Override SEMUA kemungkinan selector navbar */
+nav.custom-navbar,
+nav.navbar.custom-navbar,
+.navbar.custom-navbar,
+.custom-navbar.navbar,
+nav.navbar,
+.navbar,
+.custom-navbar {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    background-image: none !important;
+}
+
+/* Override saat scroll */
+nav.custom-navbar.scrolled,
+.navbar.custom-navbar.scrolled,
+.custom-navbar.scrolled {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+}
+
+/* Override container di dalam navbar */
+.custom-navbar > .container,
+.custom-navbar > .container-fluid,
+.custom-navbar .container,
+.custom-navbar .container-fluid {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Override SEMUA link navbar */
+.custom-navbar .nav-link,
+.custom-navbar .navbar-nav .nav-link,
+.navbar .nav-link,
+.navbar-nav .nav-link {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Override dropdown menu */
+.custom-navbar .dropdown-menu,
+.navbar .dropdown-menu {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+}
+
+/* PENTING: Hilangkan SEMUA garis bawah dari nav-underline */
+.custom-navbar .nav-link::after,
+.custom-navbar .nav-link.active::after,
+.navbar-nav .nav-link::after,
+.navbar-nav .nav-link.active::after,
+.nav-underline .nav-link::after,
+.nav-underline .nav-link.active::after {
+    display: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    content: none !important;
+}
+
+/* Hilangkan border bottom dari nav-underline */
+.nav-underline .nav-link.active,
+.nav-underline .nav-link {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Override tombol di navbar */
+.custom-navbar .btn,
+.navbar .btn {
+    background-image: none !important;
+}
+
+.custom-navbar .btn-outline-secondary,
+.navbar .btn-outline-secondary {
+    border: 2px solid #2563EB !important;
+    color: #2563EB !important;
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.custom-navbar .btn-outline-secondary:hover,
+.navbar .btn-outline-secondary:hover {
+    background-color: #2563EB !important;
+    color: #FFFFFF !important;
+}
+
+.custom-navbar .btn-accent,
+.custom-navbar .btn-primary,
+.navbar .btn-accent,
+.navbar .btn-primary {
+    background-color: #2563EB !important;
+    background: #2563EB !important;
+    border-color: #2563EB !important;
+    color: #FFFFFF !important;
+}
+
+.custom-navbar .btn-accent:hover,
+.custom-navbar .btn-primary:hover,
+.navbar .btn-accent:hover,
+.navbar .btn-primary:hover {
+    background-color: #1E40AF !important;
+    background: #1E40AF !important;
 }

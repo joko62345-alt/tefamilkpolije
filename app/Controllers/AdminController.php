@@ -5,6 +5,7 @@ class AdminController extends Controller {
     private $categoryModel;
     private $userModel;
     private $orderModel;
+    private $partnerModel;
 
     public function __construct() {
         Helper::requireAdmin();
@@ -12,6 +13,7 @@ class AdminController extends Controller {
         $this->categoryModel = $this->model('CategoryModel');
         $this->userModel     = $this->model('UserModel');
         $this->orderModel    = $this->model('OrderModel');
+        $this->partnerModel  = $this->model('PartnerModel');
     }
 
     // ===================== DASHBOARD =====================
@@ -340,6 +342,106 @@ class AdminController extends Controller {
         $galleryModel->deleteGallery($id);
         Helper::setFlash('success', 'Gambar galeri berhasil dihapus.');
         Helper::redirect('admin/gallery');
+    }
+
+    // ===================== PARTNERS =====================
+    public function partners() {
+        $data['title']     = 'Admin – Mitra';
+        $data['pageTitle'] = 'Kelola Mitra Kerjasama';
+        $data['partners']  = $this->partnerModel->getAllPartners();
+        $this->view('admin/partners', $data);
+    }
+
+    public function store_partner() {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') Helper::redirect('admin/partners');
+
+        $name = Helper::sanitize($_POST['name']);
+        $description = Helper::sanitize($_POST['description']);
+        $image = '';
+
+        if (!empty($_FILES['image']['name'])) {
+            $uploadDir = '../public/image/partners/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+            $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+            $allowed = ['jpg', 'jpeg', 'png', 'webp'];
+            if (!in_array($ext, $allowed)) {
+                Helper::setFlash('danger', 'Format gambar mitra tidak didukung (jpg/png/webp saja).');
+                Helper::redirect('admin/partners');
+            }
+            $image = 'partners_' . time() . '.' . $ext;
+            if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir . $image)) {
+                $image = 'partners/' . $image;
+            }
+        }
+
+        if (empty($name) || empty($image)) {
+            Helper::setFlash('danger', 'Nama dan gambar mitra wajib diisi.');
+            Helper::redirect('admin/partners');
+        }
+
+        $partnerData = [
+            'name' => $name,
+            'image' => $image,
+            'description' => $description
+        ];
+
+        $this->partnerModel->createPartner($partnerData);
+        Helper::setFlash('success', 'Mitra berhasil ditambahkan.');
+        Helper::redirect('admin/partners');
+    }
+
+    public function edit_partner($id = null) {
+        if (!$id) Helper::redirect('admin/partners');
+        $data['title']     = 'Admin – Edit Mitra';
+        $data['pageTitle'] = 'Edit Mitra Kerjasama';
+        $data['partner']   = $this->partnerModel->getPartnerById($id);
+        if (!$data['partner']) Helper::redirect('admin/partners');
+        $this->view('admin/edit_partner', $data);
+    }
+
+    public function update_partner() {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') Helper::redirect('admin/partners');
+
+        $id = (int)$_POST['id'];
+        $name = Helper::sanitize($_POST['name']);
+        $description = Helper::sanitize($_POST['description']);
+        $image = '';
+
+        if (!empty($_FILES['image']['name'])) {
+            $uploadDir = '../public/image/partners/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+            $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+            $allowed = ['jpg', 'jpeg', 'png', 'webp'];
+            if (in_array($ext, $allowed)) {
+                $image = 'partners_' . time() . '.' . $ext;
+                if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir . $image)) {
+                    $image = 'partners/' . $image;
+                }
+            }
+        }
+
+        $partnerData = [
+            'name' => $name,
+            'description' => $description
+        ];
+        $this->partnerModel->updatePartner($id, $partnerData);
+        if (!empty($image)) {
+            $this->partnerModel->updatePartnerImage($id, $image);
+        }
+
+        Helper::setFlash('success', 'Mitra berhasil diperbarui.');
+        Helper::redirect('admin/partners');
+    }
+
+    public function delete_partner($id = null) {
+        if (!$id) Helper::redirect('admin/partners');
+        $this->partnerModel->deletePartner($id);
+        Helper::setFlash('success', 'Mitra berhasil dihapus.');
+        Helper::redirect('admin/partners');
     }
 
     // ===================== REVIEWS =====================

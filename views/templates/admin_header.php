@@ -203,6 +203,9 @@
         <a href="<?= BASEURL; ?>/admin/gallery" class="nav-link <?= adminActive('admin/gallery'); ?>">
             <i class="bi bi-images"></i> Galeri
         </a>
+        <a href="<?= BASEURL; ?>/admin/partners" class="nav-link <?= adminActive('admin/partners'); ?>">
+            <i class="bi bi-people-fill"></i> Mitra
+        </a>
         <a href="<?= BASEURL; ?>/admin/reviews" class="nav-link <?= adminActive('admin/reviews'); ?>">
             <i class="bi bi-chat-square-text"></i> Ulasan
         </a>

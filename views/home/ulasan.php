@@ -18,14 +18,14 @@
     <div class="row g-4">
         <?php if (!empty($reviews)): ?>
             <?php 
-            $images = ['milk3.jpg', 'milk2.jpg', 'milk5.jpg']; 
+            $defaultImages = ['milk3.jpg', 'milk2.jpg', 'milk5.jpg']; 
             $idx = 0;
             ?>
             <?php foreach ($reviews as $rev): ?>
                 <div class="col-md-4">
                     <div class="card review-card shadow-sm p-0 h-100">
                         <div class="position-relative">
-                            <img src="<?= BASEURL; ?>/image/<?= $images[$idx % 3]; ?>" class="w-100 top-image" alt="Testimonial Image">
+                            <img src="<?= BASEURL; ?>/image/<?= !empty($rev['image']) ? htmlspecialchars($rev['image']) : $defaultImages[$idx % 3]; ?>" class="w-100 top-image" alt="Testimonial Image">
                             <div class="quote-circle">
                                 <i class="fa-solid fa-quote-left"></i>
                             </div>

@@ -13,31 +13,101 @@ function getCategoryFilter($name) {
 }
 ?>
 
-<section class="hero-section">
-    <div class="hero-background">
-        <img src="<?= BASEURL; ?>/image/header-bg.png" alt="hero-bg-img" class="hero-bg-img">
-    </div>
-    <div class="hero-content">
-        <h1>Susu Segar • Rasa Asli • Kualitas Terbaik</h1>
-        <p>Diproduksi dengan standar industri oleh mahasiswa berkompeten di TEFA Milk POLIJE.</p>
-        <a href="#katalog" class="hero-btn-primary">Jelajahi Katalog</a>
-    </div>
-</section>
+<!-- ============================================
+     HERO BANNER - Katalog Produk
+     ============================================ -->
+<section class="catalog-hero-banner">
+    <div class="banner-overlay"></div>
+    <div class="container position-relative z-2">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-6">
+                <span class="banner-label">
+                    <i class="bi bi-bag-fill me-2"></i>KATALOG PRODUK
+                </span>
+                <h1 class="banner-title">
+                    Pilihan Susu Berkualitas
+                    <span class="script-text">untuk Keluarga Sehat</span>
+                </h1>
+                <p class="banner-description">
+                    Tefa Milk Polije menghadirkan berbagai produk susu berkualitas tinggi dengan nutrisi terbaik untuk mendukung gaya hidup sehat Anda.
+                </p>
 
-<!-- KATALOG -->
-<section id="katalog" class="py-5">
+                <!-- Fitur Unggulan -->
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-droplet-fill"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h6>Susu Segar Berkualitas</h6>
+                            <p>Diproses dengan standar higienis</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h6>Aman & Bersertifikasi</h6>
+                            <p>Memenuhi standar keamanan pangan</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h6>Tanpa Pengawet Buatan</h6>
+                            <p>100% alami dan sehat</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h6>Untuk Seluruh Keluarga</h6>
+                            <p>Cocok untuk semua usia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Gambar Produk -->
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="hero-product-showcase">
+                    <img src="<?= BASEURL; ?>/image/2.png" alt="Produk TEFA Milk" class="hero-product-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<!-- ============================================
+     SECTION KATALOG PRODUK
+     ============================================ -->
+<section id="katalog" class="catalog-section">
     <div class="container">
         <?php Helper::flash(); ?>
 
-        <h2 class="text-center fw-bold mb-2">KATALOG PRODUK</h2>
-        <p class="text-center mb-4 text-muted">Susu berkualitas premium untuk kesehatan keluarga Anda</p>
+        <div class="section-heading">
+            <span class="section-label">Produk Kami</span>
+            <h2 class="section-heading-title">Katalog Produk</h2>
+            <p class="section-heading-desc">
+                Susu berkualitas premium untuk kesehatan keluarga Anda
+            </p>
+        </div>
 
         <!-- Filter Tabs -->
-        <div class="filter-wrapper mb-4 text-center">
-            <button class="btn filter-btn active" data-filter="all">Semua</button>
+        <div class="filter-wrapper">
+            <button class="btn filter-btn active" data-filter="all">
+                <i class="bi bi-grid-fill me-1"></i>Semua
+            </button>
             <?php foreach ($categories as $cat): ?>
                 <?php $filterVal = getCategoryFilter($cat['name']); ?>
-                <button class="btn filter-btn" data-filter="<?= $filterVal; ?>"><?= $cat['name']; ?></button>
+                <button class="btn filter-btn" data-filter="<?= $filterVal; ?>">
+                    <?= $cat['name']; ?>
+                </button>
             <?php endforeach; ?>
         </div>
         
@@ -46,34 +116,91 @@ function getCategoryFilter($name) {
             <?php if (!empty($products)): ?>
                 <?php foreach ($products as $prod): ?>
                     <?php $filterAttr = getCategoryFilter($prod['category_name']); ?>
-                    <div class="col-md-4 product-card" data-category="<?= $filterAttr; ?>">
-                        <div class="card shadow-sm border-0 p-3 h-100 d-flex flex-column justify-content-between" style="background: #FAF3D6; border: 1.5px solid #eee;">
-                            <div>
-                                <img src="<?= BASEURL; ?>/image/<?= $prod['image']; ?>" class="card-img-top rounded" alt="<?= $prod['name']; ?>" style="height: 200px; object-fit: cover;">
-                                <div class="card-body px-0">
-                                    <h5 class="fw-bold text-dark"><?= $prod['name']; ?></h5>
-                                    <p class="text-muted small mb-0"><?= $prod['description']; ?></p>
-                                </div>
+                    <div class="col-lg-4 col-md-6 product-card" data-category="<?= $filterAttr; ?>">
+                        <div class="product-card-inner">
+                            <!-- Badge Kategori -->
+                            <div class="product-category-badge">
+                                <?= $prod['category_name']; ?>
                             </div>
-                            <div class="row align-items-center mt-3">
-                                <div class="col-6">
-                                    <p class="fw-bold mb-0 text-dark" style="font-size: 1.05rem;"><?= Helper::formatRupiah($prod['price']); ?></p>
-                                    <small class="text-muted">Stok: <?= $prod['stock']; ?></small>
+
+                            <!-- Gambar Produk (FULL terlihat, tidak terpotong) -->
+                            <div class="product-image-wrapper">
+                                <img src="<?= BASEURL; ?>/image/<?= $prod['image']; ?>" 
+                                     class="product-image" 
+                                     alt="<?= $prod['name']; ?>">
+                            </div>
+
+                            <!-- Info Produk -->
+                            <div class="product-info">
+                                <h5 class="product-name"><?= $prod['name']; ?></h5>
+                                <p class="product-description"><?= substr($prod['description'], 0, 80) . (strlen($prod['description']) > 80 ? '...' : ''); ?></p>
+                                
+                                <div class="product-meta">
+                                    <div class="product-price">
+                                        <span class="price-label">Harga</span>
+                                        <span class="price-value"><?= Helper::formatRupiah($prod['price']); ?></span>
+                                    </div>
+                                    <div class="product-stock">
+                                        <i class="bi bi-box-seam"></i>
+                                        <span>Stok: <?= $prod['stock']; ?></span>
+                                    </div>
                                 </div>
-                                <div class="col-6 text-end">
-                                    <a href="<?= BASEURL; ?>/catalog/detail/<?= $prod['id']; ?>" class="btn produk-button w-100 text-center py-2 fw-semibold" style="background: #E4947D; color: #fff; border: none; border-radius: 8px;">Detail</a>
-                                </div>
+
+                                <a href="<?= BASEURL; ?>/catalog/detail/<?= $prod['id']; ?>" class="btn btn-detail">
+                                    <i class="bi bi-eye-fill me-1"></i>Detail Produk
+                                </a>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <div class="col-12 text-center py-5">
-                    <p class="text-muted">Produk tidak tersedia.</p>
+                <div class="col-12">
+                    <div class="empty-state">
+                        <div class="empty-icon">
+                            <i class="bi bi-bag-x"></i>
+                        </div>
+                        <h4 class="empty-title">Produk Tidak Tersedia</h4>
+                        <p class="empty-text">Silakan cek kembali nanti untuk produk terbaru kami.</p>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>
     </div>
 </section>
+
+<!-- Script Filter -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active from all
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.getAttribute('data-filter');
+
+            productCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+});
+</script>
 
 <?php require_once '../views/templates/footer.php'; ?>
