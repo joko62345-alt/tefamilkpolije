@@ -1,0 +1,182 @@
+
+        .card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .card.expanded {
+            background-color: #dbeafe;
+            border: 2px solid #93c5fd;
+        }
+        
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .star-filled {
+            color: #f59e0b;
+        }
+        
+        .star-empty {
+            color: #d1d5db;
+        }
+        
+        .quote-icon {
+            background-color: #f59e0b;
+            color: white;
+            border-radius: 50%;
+            padding: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-add-review {
+            background-color: #f59e0b;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-add-review:hover {
+            background-color: #e57c00;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+        
+        .nav-link {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            margin: 0 10px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background-color: #f59e0b;
+            color: white;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 12px 24px;
+            background-color: #f9fafb;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .breadcrumb a {
+            color: #1f2937;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Page Title */
+        .page-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: #1f2937;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #f9fafb;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text {
+            font-size: 0.875rem;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+        
+        .footer-heading {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .info-title {
+            font-weight: 600;
+            margin-top: 1rem;
+            color: #1f2937;
+        }
+        
+        .info-text {
+            font-size: 0.875rem;
+            color: #4b5563;
+            margin: 0.25rem 0;
+        }
+        
+        .footer-menu li, .footer-social li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-menu a, .footer-social a {
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+        
+        .footer-menu a:hover, .footer-social a:hover {
+            color: #f59e0b;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            margin-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.75rem;
+            color: #6b7280;
+        }

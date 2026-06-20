@@ -1,0 +1,590 @@
+/* ===== Hero ===== */
+.hero-section {
+    position: relative;
+    height: 30px; /* Sesuaikan tinggi sesuai kebutuhan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-section .carousel,
+.hero-section .carousel-inner,
+.hero-section .carousel-item {
+    height: 100%;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(70%);
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+.hero-section {
+    position: relative;
+    height: 100vh;
+    margin-top: -90px; /* SESUAIKAN DENGAN TINGGI NAVBAR-MU */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.hero-btn-primary {
+    background: #E4947D;
+    color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.hero-btn-primary:hover {
+    background: #f0baab;
+    transform: scale(1.05);
+}
+
+/* ===== Partner ===== */
+        .section-partner {
+            margin-bottom: 30px;
+        }
+
+        .section-partner h2 {
+            font-weight: 700;
+            margin-bottom: 45px;
+        }
+
+        .partner-card {
+            background-color: #F8F1CB;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.18);
+            transition: 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            border-color: #E4947D;
+        }
+
+        .partner-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .partner-card .content {
+            padding: 18px 22px;
+            text-align: center;
+        }
+
+        .partner-card h4 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .partner-card p {
+            font-size: 15px;
+            margin: 0;
+        }
+
+/* ===== FAQ ===== */
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Container FAQ */
+.faq-section {
+    background-color: #FFF8DF;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 0;
+    max-width: 100%;
+}
+
+/* Item Accordion */
+.accordion-item {
+    border: none;
+    margin-bottom: 8px;
+}
+
+.accordion-item {
+    border: none !important;
+    margin-bottom:  15px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #a8bcbc; /* warna background header seperti gambar */
+}
+
+.accordion-button {
+    background: white !important;
+    color: black !important;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 25px;
+    border-radius: 0 !important;
+    overflow: hidden;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: white !important;
+    background: #a8bcbc !important;
+    box-shadow: none !important;
+}
+
+.accordion-button::after {
+    background-image: none !important;
+    content: "−";
+    font-size: 28px;
+    color: #a8bcbc;
+
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordion-button.collapsed::after {
+    background-image: none !important;
+    content: "+";
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #a8bcbc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordion-body {
+    background: #a8bcbc;
+    color: white;
+    padding: 25px;
+    font-size: 18px;
+    border-radius: 0 0 20px 20px;
+}
+
+
+/* Isi Accordion saat dibuka (biar match warna) */
+.accordion-button:not(.collapsed) + .accordion-collapse .accordion-body {
+    background-color: rgb(156, 175, 171);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Responsif HP */
+@media (max-width: 576px) {
+    .faq-section {
+        padding: 20px;
+    }
+}
+
+
+/* ===== Form ===== */
+#form-section {
+  background-color: white; 
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BOX (FORM) */
+.form-box {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.form-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.20);
+}
+
+/* TEXT */
+.form-box h5 {
+  color: black;
+}
+
+.form-box p {
+  color: #7b776d;
+}
+
+/* INPUT DAN TEXTAREA */
+.form-control {
+  background-color: #ffe1d7;
+  border: 1.8px solid #D0B889;
+  border-radius: 10px;
+  transition: 0.25s ease;
+}
+
+.form-control:focus {
+  border-color: white;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 0.18rem rgba(178, 146, 91, 0.35);
+}
+
+.form-control::placeholder {
+  color: rgb(129, 128, 128);
+  font-size: 0.9rem;
+}
+
+/* TOMBOL KIRIM */
+.submit-btn {
+  background-color: #E4947D;
+  border: none;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: 0.25s ease;
+  color: #fff;
+}
+
+.submit-btn:hover {
+  background-color: #f0baab;
+  color: #fff;
+  transform: scale(1.05);
+}
+/* Mengatur form agar bisa memposisikan tombol */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tombol kecil di pojok kanan */
+.submit-btn {
+  align-self: flex-end;      
+  width: auto !important;
+  padding: 8px 18px;
+  border-radius: 8px;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+
+
+/* ===== TOMBOL PROFIL PERUSAHAAN ===== */
+.profile-btn {
+  background-color: #9CAFAB;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: 0.25s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.profile-btn:hover {
+  background-color: #9CAFAB;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .profile-btn {
+    width: 100%;
+  }
+  .col-md-5 p {
+    margin-top: 15px;
+  }
+}
+
+/* ================== SOP SECTION ================== */
+
+.sop-wrapper {
+    background-color: #FFF8DF;
+    border-radius: 25px;
+    padding: 40px 50px;
+}
+
+/* Kotak bullet */
+.kotak {
+    width: 14px;
+    height: 14px;
+    background-color: #4B2E19;
+    border-radius: 4px;
+}
+
+/* Item SOP */
+.sop-item {
+    padding: 15px 5px;
+    border-bottom: 1px solid #e4d5b8;
+    font-weight: 600;
+    color: #3b2f1e;
+}
+
+/* Hilangkan border terakhir */
+.sop-item:last-child {
+    border-bottom: none;
+}
+
+/* Tombol */
+.btn-sop {
+    background-color: #C17F63;
+    color: white;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.btn-sop:hover {
+    background-color: #9f654d;
+}
+
+
+/* Modal background */
+.modal-content {
+    background-color: #D6DAC9 !important;
+}
+
+/* ===== join ===== */
+        .mitra-section {
+            padding: 85px 0;
+        }
+
+        .mitra-title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .email-box {
+            background-color: #E8F0C9;
+            border-radius: 12px;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.17);
+            max-width: 420px;
+        }
+
+        .email-box:hover {
+            background-color: rgb(211, 228, 148);
+            transform: scale(1.03);
+          }
+
+        .email-box .icon {
+            background-color: #3C3C3C;
+            width: 55px;
+            height: 55px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .email-box .icon i {
+            color: white;
+            font-size: 26px;
+        }
+
+        .email-box .email-title {
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .email-address {
+            margin: 0;
+            font-size: 16px;
+        }
+/* ===========================
+   FIX OVERFLOW GLOBAL
+=========================== */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+
+/* ===========================
+   RESPONSIVE 991PX
+=========================== */
+@media (max-width: 991px) {
+
+  .navbar-brand {
+      font-size: 24px;
+  }
+
+  .navbar-nav .nav-link {
+      font-size: 18px;
+  }
+
+  .hero-title {
+      font-size: 36px;
+  }
+
+  .hero-subtitle {
+      font-size: 20px;
+  }
+
+  .section-title {
+      font-size: 36px;
+  }
+
+  .contact-heading {
+      font-size: 28px;
+  }
+
+  .form-title {
+      font-size: 28px;
+  }
+}
+
+
+/* ===========================
+   RESPONSIVE 768PX
+=========================== */
+@media (max-width: 768px) {
+
+  /* Hilangkan splash */
+  .milk-splash {
+      display: none;
+  }
+
+  /* HERO SECTION */
+  .hero-section {
+      height: 61vh;
+      margin-top: 0;
+      margin-bottom: 25px;
+      padding: 0 10px;
+  }
+
+  .hero-content {
+      width: 100%;
+      max-width: 100%;
+      padding: 15px;
+  }
+
+  .hero-content h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+  }
+
+  .hero-content p {
+      font-size: 14px;
+      margin-bottom: 15px;
+      padding: 0 10px;
+  }
+
+  /* Section title */
+  .section-title {
+      font-size: 28px;
+  }
+
+  .contact-heading {
+      font-size: 24px;
+  }
+
+  .contact-description,
+  .form-description {
+      font-size: 18px;
+  }
+
+  .contact-icon,
+  .social-icon {
+      width: 60px;
+      height: 60px;
+  }
+
+  .contact-icon i,
+  .social-icon i {
+      font-size: 24px;
+  }
+
+  /* SOP WRAPPER */
+  .sop-wrapper {
+      padding: 25px 20px !important;
+  }
+
+  /* Atur ulang layout SOP agar tidak overflow */
+  .sop-item {
+      margin: 0 !important;
+      padding: 10px 0 !important;
+  }
+
+  .sop-item .col-1,
+  .sop-item .col-7,
+  .sop-item .col-4 {
+      width: 100% !important;
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      text-align: left !important;
+  }
+
+  .sop-item .col-4 {
+      margin-top: 10px;
+  }
+
+  .btn-sop {
+      width: 100% !important;
+      margin-top: 8px;
+  }
+}
+
+
+/* ===========================
+   RESPONSIVE 480PX
+=========================== */
+@media (max-width: 480px) {
+
+  .sop-wrapper {
+      padding: 20px 15px !important;
+  }
+
+  .btn-sop {
+      font-size: 13px;
+      padding: 6px 14px;
+  }
+}

@@ -1,0 +1,61 @@
+<?php require_once '../views/templates/admin_header.php'; ?>
+
+<?php Helper::flash(); ?>
+
+<div class="container-fluid px-0">
+    <div class="form-card mb-4">
+        <a href="<?= BASEURL; ?>/admin/gallery" class="btn btn-outline-secondary mb-3">
+            <i class="bi bi-arrow-left me-1"></i> Kembali
+        </a>
+        <h5 class="mb-4">Edit Gambar Galeri</h5>
+        <form action="<?= BASEURL; ?>/admin/update_gallery" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<?= $gallery['id']; ?>">
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Judul Galeri</label>
+                        <input type="text" name="title" class="form-control" value="<?= htmlspecialchars($gallery['title']); ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Deskripsi</label>
+                        <textarea name="description" class="form-control" rows="3" placeholder="Deskripsi singkat galeri..."><?= htmlspecialchars($gallery['description'] ?? ''); ?></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Jenis</label>
+                        <select name="type" class="form-select" required>
+                            <option value="kegiatan" <?= $gallery['type'] === 'kegiatan' ? 'selected' : ''; ?>>Kegiatan</option>
+                            <option value="artikel" <?= $gallery['type'] === 'artikel' ? 'selected' : ''; ?>>Artikel</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Gambar Baru (Opsional)</label>
+                        <input type="file" name="image" class="form-control" accept="image/*">
+                        <small class="text-muted">Biarkan kosong jika tidak ingin mengubah gambar</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Gambar Saat Ini</label>
+                        <?php
+                            $imagePath = BASEURL . '/image/' . htmlspecialchars($gallery['image']);
+                            if (strpos($gallery['image'], 'http') === 0) {
+                                $imagePath = $gallery['image'];
+                            }
+                        ?>
+                        <div style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                            <img src="<?= $imagePath; ?>" alt="<?= htmlspecialchars($gallery['title']); ?>" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary-custom">Simpan Perubahan</button>
+                <a href="<?= BASEURL; ?>/admin/gallery" class="btn btn-outline-secondary">Batal</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<?php require_once '../views/templates/admin_footer.php'; ?>

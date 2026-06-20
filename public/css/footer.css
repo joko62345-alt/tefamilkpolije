@@ -1,0 +1,137 @@
+
+.footer {
+  background-color: #FAF3D6;
+  padding-top: 1.5rem;
+  height: fit-content;
+}
+
+.footer-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.875;
+  letter-spacing: 0.32px;
+}
+
+.footer-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #000000;
+}
+
+.footer-info .info-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000000;
+  letter-spacing: 0.32px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-info .info-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.875;
+  letter-spacing: 0.32px;
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-menu li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-menu li a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: 0.32px;
+  transition: color 0.3s ease;
+}
+
+.footer-menu li a:hover {
+  color: #E4947D;
+}
+
+.footer-social {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-social li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-social li a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: 0.32px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-social li a:hover {
+  color: #E4947D;
+}
+
+.footer-social li a i {
+  font-size: 18px;
+}
+
+.footer-bottom {
+  background-color: #F1B6A4;
+  margin-top: 2rem;
+}
+
+.footer-bottom p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000000;
+  letter-spacing: 0.32px;
+  width: 100%;
+  max-width: 100%;
+}
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: #E4947D;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: 0.3s ease;
+}
+
+.social-icon i {
+    font-size: 20px;
+}
+
+.social-icon:hover {
+    background: #f0baab;
+    transform: scale(1.1);
+}

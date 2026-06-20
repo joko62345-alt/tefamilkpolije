@@ -1,0 +1,274 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* HERO */
+.hero-section {
+    position: relative;
+    height: 30px; /* Sesuaikan tinggi sesuai kebutuhan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-section .carousel,
+.hero-section .carousel-inner,
+.hero-section .carousel-item {
+    height: 100%;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(70%);
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: bold;}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+.hero-section {
+    position: relative;
+    height: 100vh;
+    margin-top: -90px; /* SESUAIKAN DENGAN TINGGI NAVBAR-MU */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.hero-btn-primary {
+    background: #E4947D;
+    color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.hero-btn-primary:hover {
+    background: #f0baab;
+    transform: scale(1.05);
+}
+
+.filter-btn {
+    border: 1px solid #E4947D;
+    padding: 6px 18px;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #f0baab;
+    color: #fff;
+}
+/* =============================
+   FILTER WRAPPER (SLIDE STYLE)
+   ============================= */
+.filter-wrapper {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+}
+
+.filter-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+/* Filter Button */
+.filter-btn {
+    border: 1px solid #E4947D;
+    padding: 8px 20px;
+    border-radius: 8px;
+    background: white;
+    color: #E4947D;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #E4947D;
+    color: #fff;
+}
+
+.produk-button {
+        color: #000000;
+        padding: 10px -20px;
+        border-radius: 5px;
+        border: 1px solid #E4947D;
+        font-size: 1.1rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: 0.3s ease;
+        margin-right: 5px;
+        text-decoration: none;
+    }
+
+    .produk-button:hover {
+        background: #f0baab;
+        transform: scale(1.05);
+        color: #fff;
+        font-weight: 600;
+    }
+
+/* =============================
+   RESPONSIVE
+   ============================= */
+
+@media (max-width: 992px) {
+    .filter-wrapper {
+        justify-content: center; /* RAPI DI TENGAH SAAT DESKTOP */
+        overflow-x: visible;     /* Tidak perlu scroll di desktop */
+        white-space: normal;     /* Biar tidak memanjang */
+        flex-wrap: wrap;         /* Jika panjang, bisa turun ke baris baru */
+    }
+
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+        gap: 20px;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    .product-card img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    #katalog .product-card {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+
+/* Tablet & HP */
+
+@media (max-width: 768px) {
+    .hero-section {
+            height: 61vh;
+            margin-top: 0px;
+            margin-bottom: 25px;
+        }
+
+        .hero-content {
+            width: 94%;
+            padding: 18px;
+        }
+
+        .hero-content h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 14px;
+            margin-bottom: 25px;
+            padding: 0 20px;
+        }
+
+    .filter-wrapper {
+        display: flex;
+        flex-wrap: wrap; /* <-- IZINKAN PINDAH BARIS */
+        gap: 8px;
+        padding: 10px;
+        overflow-x: unset; /* <-- MATIKAN SCROLL HORIZONTAL */
+        white-space: normal; /* <-- AGAR BOLEH LANGSUNG KE BARIS BARU */
+        justify-content: center; /* bisa diganti flex-start */
+    }
+
+    .filter-btn {
+        flex: 0 1 auto; /* Supaya ukuran fleksibel */
+        font-size: 13px;
+        padding: 6px 14px;
+    }
+
+    .product-card img {
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .produk-button {
+        color: #000000;
+        padding: 10px -20px;
+        border-radius: 5px;
+        border: 1px solid #E4947D;
+        font-size: 1.1rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: 0.3s ease;
+        margin-right: 5px;
+        text-decoration: none;
+    }
+
+    .produk-button:hover {
+        background: #f0baab;
+        transform: scale(1.05);
+        color: #fff;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 576px) {
+    #katalog .product-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-wrapper {
+        flex-wrap: wrap;
+        overflow-x: hidden;
+        white-space: normal;
+    }
+}
+
+

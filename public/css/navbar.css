@@ -1,0 +1,192 @@
+/* ================================
+   BASE NAVBAR
+================================ */
+
+.navbar {
+  background-color: #FAF3D6;
+  padding: 0.75rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #000000;
+  margin-left: 1rem;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Navbar items horizontal alignment */
+.navbar-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-nav .nav-item {
+  margin-bottom: 0 !important;
+  white-space: nowrap;
+}
+
+.navbar-nav .nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #E4947D;
+}
+
+.navbar-nav .nav-link.active {
+  color: #000000;
+  border-bottom: 3px solid #E4947D;
+}
+
+/* ================================
+   NAVBAR SCROLL EFFECT
+================================ */
+
+/* Transparan awal */
+.custom-navbar {
+    background: rgba(255, 255, 255, 0);
+    box-shadow: none !important;   /* ← hilangkan shadow */
+    transition: 0.3s ease;
+}
+
+/* Saat scroll berubah warna */
+.custom-navbar.scrolled {
+    background: #FAF3D6;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ================================
+   HAMBURGER BUTTON
+================================ */
+
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
+  padding: 6px 8px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 16 16'%3E%3Cpath stroke='black' stroke-width='2' d='M2 4h12M2 8h12M2 12h12'/%3E%3C/svg%3E");
+}
+
+/* ================================
+   RESPONSIVE FOR HP
+================================ */
+
+@media (max-width: 768px) {
+
+  /* Brand mengecil di HP */
+  .navbar-brand {
+    font-size: 22px;
+    margin-left: 0.5rem;
+  }
+
+  .navbar-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Menu collapse style */
+  .navbar-collapse {
+    background: #FAF3D6;
+    padding: 15px;
+    border-radius: 0 0 18px 18px;
+    margin-top: 12px;
+  }
+
+  /* Saat hamburger dibuka */
+  .navbar-collapse.show {
+      background: #FAF3D6 !important;
+      padding: 15px;
+      border-radius: 0 0 16px 16px;
+  }
+
+  /* Override flex untuk mobile */
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  /* Link menu di HP */
+  .navbar-nav .nav-link {
+    padding: 12px 10px;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .navbar-nav .nav-link.active {
+    border: none;
+    color: #E4947D;
+    font-weight: 700;
+  }
+
+  /* Hover effect HP */
+  .navbar-nav .nav-link:hover {
+    background: #fdc462;
+    border-radius: 10px;
+  }
+
+  /* supaya menu full width */
+  .navbar-nav {
+    width: 100%;
+  }
+
+  /* Tambah jarak bawah menu */
+  .nav-item {
+    margin-bottom: 3px;
+  }
+}
+
+/* ================================
+   SUPER SMALL (max-width: 420px)
+================================ */
+
+@media (max-width: 420px) {
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .navbar-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 15px;
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-link.active::after {
+        display: none; /* hilangkan underline di HP */
+    }
+
+    .navbar-nav .nav-link.active {
+        background: #ffdea5;
+        border-radius: 10px;
+        color: #000000;
+    }
+}

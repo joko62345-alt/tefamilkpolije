@@ -1,0 +1,490 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    /* background-color: white; */
+}
+.hero-section {
+    position: relative;
+    height: 30px; /* Sesuaikan tinggi sesuai kebutuhan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-section .carousel,
+.hero-section .carousel-inner,
+.hero-section .carousel-item {
+    height: 100%;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(70%);
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    /* margin-top: px; */
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 30px; 
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    margin-top: -90px; /* SESUAIKAN DENGAN TINGGI NAVBAR-MU */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.hero-btn-primary {
+    background: #E4947D;
+    color: #ffffff;
+    padding: 8px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.hero-btn-primary:hover {
+    background: #f0baab;
+    transform: scale(1.05);
+}
+    
+.content-section {
+    background-color: white;
+    padding: 0px 50px;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;
+    align-items: center;
+    text-align: center;
+
+}
+
+.section-content {
+    text-align: justify;
+    line-height: 1.8;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.read-more-btn {
+    background-color: #E4947D;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+
+.read-more-btn:hover {
+    background-color: #F2B6A4;
+    transform: translateY(-2px);
+}
+
+/* Vision Mission Container */
+.vm-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+    align-items: start;
+}
+
+.vm-box1 {
+    background: #FAF3D6;
+    padding: 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vm-box1 h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.vm-box {
+    background: #e0e0e0;
+    padding: 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vm-box h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.vm-placeholder {
+    background: #e0e0e0;
+    padding: 40px;
+    text-align: center;
+    border-radius: 5px;
+    color: #666;
+    font-style: italic;
+}
+.org-section {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    background: white;
+    padding: 60px 40px;
+    box-shadow: none;
+}
+
+/* Judul Section */
+.section-title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+}
+
+.org-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 30px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.diagram-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diagram-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.leaders-carousel-container {
+    flex: 1;
+    min-width: 350px;
+    position: relative;
+    padding: 0 50px;
+}
+
+/* Card untuk setiap leader */
+.leader-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    /* margin: 0 20px; */
+}
+
+/* Foto leader */
+.leader-img {
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Nama leader */
+.leader-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 15px 0 5px;
+}
+
+/* Jabatan leader */
+.leader-role {
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin: 0;
+}
+/* Tombol Prev & Next */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(44, 62, 80, 0.8);
+    border-radius: 50%;
+    top: 40%;
+    opacity: 1;
+}
+
+.carousel-control-prev {
+    left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(44, 62, 80, 1);
+}
+
+/* Indicators (titik navigasi) */
+.carousel-indicators {
+    position: relative;
+    bottom: auto;
+    margin-bottom: 0;
+}
+
+.carousel-indicators button {
+    background-color: #F2B6A4;
+    width: 12px;
+    height: 12px;
+}
+
+.carousel-indicators button.active {
+    background-color: #E4947D;
+}
+/* ===================================
+   GLOBAL FIX — HILANGKAN OVERFLOW
+=================================== */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+
+/* ===================================
+   TABLET & SMALL LAPTOP (≤ 992px)
+=================================== */
+@media (max-width: 992px) {
+
+    /* Struktur Organisasi */
+    .org-content {
+        flex-direction: column;
+    }
+
+    .diagram-container,
+    .leaders-carousel-container {
+        width: 100%;
+    }
+
+    .leader-card {
+        margin: 0 10px;
+    }
+
+    .carousel-control-prev {
+        left: 10px;
+    }
+
+    .carousel-control-next {
+        right: 10px;
+    }
+
+    /* Navbar & Text */
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 18px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .contact-heading {
+        font-size: 28px;
+    }
+
+    .form-title {
+        font-size: 28px;
+    }
+}
+
+
+
+/* ===================================
+            MOBILE (≤ 768px)
+=================================== */
+@media (max-width: 768px) {
+
+    /* Hilangkan elemen dekorasi */
+    .milk-splash {
+        display: none;
+    }
+
+    /* HERO */
+    .hero-section {
+        height: 60vh;
+        margin-top: 0;
+        padding: 0 10px;
+    }
+
+    .hero-content {
+        width: 94%;
+        padding: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        margin-bottom: 18px;
+        padding: 0 20px;
+    }
+
+    /* Section Title */
+    .section-title {
+        font-size: 28px;
+    }
+
+    /* Contacts & Forms */
+    .contact-heading,
+    .form-title {
+        font-size: 24px;
+    }
+
+    .contact-description,
+    .form-description {
+        font-size: 18px;
+    }
+
+    .contact-icon,
+    .social-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .contact-icon i,
+    .social-icon i {
+        font-size: 24px;
+    }
+
+    /* Visi-Misi */
+    .vm-container {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    /* Leadership */
+    .leadership {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Padding Section */
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .content-section,
+    .org-section {
+        padding: 0px 20px;
+    }
+}
+
+
+
+/* ===================================
+        MOBILE SMALL (≤ 576px)
+=================================== */
+@media (max-width: 576px) {
+
+    /* Foto Leader */
+    .leader-img {
+        width: 150px;
+        height: 200px;
+    }
+
+    /* Judul */
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .org-section {
+        padding: 30px 15px;
+    }
+}
+
+
+/* ===================================
+   END OF CSS FILE
+=================================== */

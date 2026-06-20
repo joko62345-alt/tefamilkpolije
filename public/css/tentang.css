@@ -1,0 +1,286 @@
+        body {
+            background-color: #fff;
+            color: #333;
+            padding-top: 100px;
+            
+        }
+
+        .header {
+            background-color: #f9f2d7;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .site-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            
+  
+}
+
+        .breadcrumb {
+            padding: 15px 20px;
+            font-size: 16px;
+            color: #666;
+            font-family: 'Poppins', sans-serif; /* Pastikan ini ada */
+        }
+
+        .breadcrumb a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .breadcrumb span {
+            color: #666;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif; /* Pastikan ini ada */
+        }
+
+        .gallery-container {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-family: 'Poppins', sans-serif; /* Pastikan ini ada */
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+
+           /* Footer */
+        .footer {
+            background-color: #FAF3D6;
+            padding: 3rem 2rem 1rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            width: 102px;
+            height: 102px;
+            object-fit: cover;
+        }
+
+        .footer-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: #000000;
+            line-height: 1.875;
+            letter-spacing: 0.32px;
+        }
+
+        .footer-heading {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 30px;
+            color: #000000;
+            margin-bottom: 1rem;
+        }
+
+        .footer-info .info-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #000000;
+            letter-spacing: 0.32px;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-info .info-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: #000000;
+            line-height: 1.875;
+            letter-spacing: 0.32px;
+        }
+
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-menu li a {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #000000;
+            text-decoration: none;
+            letter-spacing: 0.32px;
+            transition: color 0.3s ease;
+            display: block;
+        }
+
+        .footer-menu li a:hover {
+            color: #E4947D;
+        }
+
+        .footer-social {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-social li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-social li a {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #000000;
+            text-decoration: none;
+            letter-spacing: 0.32px;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-social li a:hover {
+            color: #E4947D;
+        }
+
+        .footer-social li a i {
+            font-size: 18px;
+        }
+
+        .footer-bottom {
+            background-color: #F1B6A4;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #000000;
+            letter-spacing: 0.32px;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-brand {
+                font-size: 24px;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 18px;
+                gap: 1rem;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .navbar-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero-title {
+                font-size: 24px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }

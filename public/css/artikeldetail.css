@@ -1,0 +1,40 @@
+
+
+
+/* Padding atas body — PASTIKAN INI BESAR! */
+body {
+  padding-top: 120px; /* 👈 INI YANG PALING PENTING */
+  font-family: 'Inter', sans-serif;
+}
+h2{
+    text-align: center;
+}
+
+
+/* Margin atas untuk breadcrumb agar tidak terlalu dekat dengan navbar */
+.breadcrumb {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+        .bg-cream {
+    background-color: #fefae0;
+  }
+        .prose {
+            line-height: 1.75;
+            font-size: 1.125rem;
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+          

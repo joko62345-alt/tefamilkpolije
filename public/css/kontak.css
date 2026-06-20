@@ -1,0 +1,747 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 30px; /* Sesuaikan tinggi sesuai kebutuhan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-section .carousel,
+.hero-section .carousel-inner,
+.hero-section .carousel-item {
+    height: 100%;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(70%);
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: bold;}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+.hero-section {
+    position: relative;
+    height: 100vh;
+    margin-top: -90px; /* SESUAIKAN DENGAN TINGGI NAVBAR-MU */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+/* Contact Section */
+.contact-section {
+  /* padding: 4rem 0; */
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 3rem;
+}
+
+.contact-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 27px;
+  color: #000000;
+}
+
+.contact-description {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+  line-height: 1.5;
+  
+}
+
+.contact-info-wrapper {
+  margin-top: 1rem;
+}
+
+
+.contact-details {
+  margin-left: 15px; /* konsisten */
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;  /* PENTING! menyamakan dengan Figma */
+  gap: 15px;
+
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E4947D;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 15px;
+}
+
+
+.contact-icon i {
+  font-size: 20px;
+  color: #000000;
+}
+
+
+.contact-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.contact-value {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 0.25rem;
+  line-height: 1.6;
+}
+.contact-divider {
+  border: none;
+  border-top: 5px solid #000000;
+  margin-top: -40px;   /* garis naik, ikon tetap */
+  margin-bottom: 20px; /* jarak ke ikon tetap rapi */
+  padding: 0;
+  width: 100%;
+  opacity: 1;
+}
+
+.contact-divider-bottom {
+  margin-top: 10px !important;  /* turunkan lebih rendah */
+}
+
+
+
+/* Social Media */
+
+.social-media-section {
+  margin-top: -10px;
+}
+
+.social-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  background-color: #E4947D;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  background-color: #d17d66;
+}
+
+.social-icon i {
+  font-size: 20px;
+  color: #000000;
+}
+
+/* Contact Form */
+.contact-form-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0px 6px 15px 5px rgba(0, 0, 0, 0.25);
+
+}
+
+/* Wrapper card */
+.form-wrapper {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background: #fff;
+    padding: 30px;             /* Tambah ruang biar tidak mepet */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Label */
+.form-wrapper .form-label {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+/* Input & textarea */
+.form-wrapper .form-control,
+.form-wrapper textarea {
+    width: 100%;               /* Agar semua elemen sama lebar */
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Spasi antar elemen */
+.form-wrapper .mb-3,
+.form-wrapper .mb-4 {
+    margin-bottom: 20px !important;
+}
+
+/* Rating sejajar rapi */
+.rating-stars {
+    display: flex;
+    gap: 5px;
+}
+
+/* Style button */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+
+.form-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #000000;
+}
+
+
+.form-description {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+}
+
+.form-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.custom-input {
+  background-color: rgba(228, 148, 125, 0.15);
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.custom-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.custom-input:focus {
+  background-color: rgba(228, 148, 125, 0.2);
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Rating Stars */
+.rating-stars {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.rating-stars .star {
+  font-size: 28px;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.rating-stars .star.active,
+.rating-stars .star:hover {
+  color: #FFD700;
+}
+
+.file-upload-icon {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(228, 148, 125, 0.52);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.file-upload-icon i {
+  font-size: 20px;
+  color: #000000;
+}
+
+.file-upload-text {
+  flex: 1;
+}
+
+.file-upload-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  cursor: pointer;
+}
+
+.file-name {
+  display: none;
+}
+
+/* Textarea */
+.custom-textarea {
+  background-color: rgba(228, 148, 125, 0.15);
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  resize: vertical;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.custom-textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.custom-textarea:focus {
+  background-color: rgba(228, 148, 125, 0.2);
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Submit Button */
+.btn-submit {
+  background-color: #E4947D;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+  box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  width: auto;
+  max-width: 150px;
+}
+
+.btn-submit:hover {
+  background-color: #f0baab;
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 8px 2px rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+
+/* FIX NAVBAR RESPONSIVE */
+.navbar {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.navbar-collapse {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.navbar-nav .nav-link {
+    white-space: nowrap;  /* Menghindari teks turun aneh */
+}
+
+/* MAP WRAPPER */
+.map-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+/* MAP FRAME – DESKTOP */
+.map-wrapper iframe {
+    width: 100% !important;
+    min-height: 350px !important;
+    height: 350px;
+    border: 0;
+    border-radius: 15px;
+    display: block;              /* Fix Android Blank */
+    background: #f0f0f0;         /* Prevent invisible blank */
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+    .map-wrapper iframe {
+        height: 280px !important;
+        min-height: 280px !important;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+    .map-wrapper iframe {
+        height: 200px !important;
+        min-height: 200px !important;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        width: 110px !important;
+    }
+
+    .navbar {
+        padding: 8px 15px !important;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+        padding: 20px 10px !important;
+    }
+
+    .navbar-nav {
+        gap: 5px;
+    }
+
+    .nav-link {
+        font-size: 16px !important;
+    }
+}
+
+/* Responsive untuk HP & Tablet (<=768px) */
+@media (max-width: 600px) {
+
+    /* HERO */
+    .hero-section {
+        height: 61vh;
+        margin-top: 0px;
+        margin-bottom: 25px;
+    }
+
+    .hero-content {
+        width: 94%;
+        padding: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        margin-bottom: 18px;
+        padding: 0 20px;
+    }
+
+    /* Contact Section */
+    .contact-heading {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .contact-description {
+        font-size: 14px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .contact-details {
+        margin-left: 0;
+    }
+
+    .contact-item {
+        gap: 10px;
+    }
+
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        margin-top: 19px;
+    }
+
+    .contact-icon i {
+        font-size: 18px;
+    }
+
+    .contact-label {
+        font-size: 16px;
+    }
+
+    .contact-value {
+        font-size: 14px;
+    }
+
+    .contact-divider {
+        border-top: 3px solid #000;
+        margin-top: -20px;
+    }
+
+    /* Social Media */
+    .social-heading {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .social-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .social-icon i {
+        font-size: 18px;
+    }
+
+    /* Form */
+    .form-wrapper {
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    .form-title {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .form-description {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .form-label {
+        font-size: 16px;
+    }
+
+    .custom-input,
+    .custom-textarea {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .rating-stars .star {
+        font-size: 22px;
+    }
+
+    .btn-submit {
+        width: 100%;
+        max-width: none;
+        font-size: 16px;
+    }
+
+    /* Navbar container */
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    /* Logo */
+    .navbar-brand img {
+        width: 120px;    /* kecil agar pas layar HP */
+        height: auto;
+    }
+
+    /* Toggle (hamburger) agar muncul di HP */
+    .navbar-toggler {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Dropdown menu HP */
+    .navbar-collapse {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+        font-weight: 600;
+        padding: 8px 0;
+    }
+}
+
+/* ============================
+   RESPONSIVE MOBILE SUPPORT
+   max-width: 576px
+===============================*/
+@media (max-width: 576px) {
+
+    /* --- HERO SECTION --- */
+    .hero-section {
+        padding: 40px 15px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .milk-splash {
+        width: 140px !important;
+        opacity: 0.6;
+    }
+
+    /* --- CONTACT LEFT --- */
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .contact-label {
+        font-size: 16px;
+    }
+
+    .contact-value a {
+        font-size: 14px;
+    }
+
+    .contact-description {
+        font-size: 14px;
+    }
+    
+    hr.contact-divider {
+        margin: 20px 0;
+    }
+
+    /* --- SOCIAL ICONS --- */
+    .social-icons {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-start;
+    }
+
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    /* --- FORM SECTION (KANAN) --- */
+    .form-wrapper {
+        padding: 20px !important;
+    }
+
+    .custom-input,
+    .custom-textarea {
+        font-size: 14px;
+    }
+
+    .rating-stars .star {
+        font-size: 22px;
+        margin-right: 3px;
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    /* --- MAP --- */
+    .map-wrapper iframe {
+        height: 320px !important;
+    }
+}
